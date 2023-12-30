@@ -15,11 +15,17 @@
 
  <!-- Include Choices CSS -->
 <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/publicassets/styles/choices.min.css" /> -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/choices.js/1.1.6/styles/css/choices.min.css" integrity="sha512-/PTsSsk4pRsdHtqWjRuAL/TkYUFfOpdB5QDb6OltImgFcmd/2ZkEhW/PTQSayBKQtzjQODP9+IAeKd7S2yTXtA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/choices.js/1.1.6/styles/css/choices.min.css" integrity="sha512-/PTsSsk4pRsdHtqWjRuAL/TkYUFfOpdB5QDb6OltImgFcmd/2ZkEhW/PTQSayBKQtzjQODP9+IAeKd7S2yTXtA==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+<!-- new  -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+/>
 <!-- Include Choices.js script -->
 <!-- <script src="https://cdn.jsdelivr.net/npm/choices.js/publicassets/scripts/choices.min.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/choices.js/1.1.6/choices.min.js" integrity="sha512-7PQ3MLNFhvDn/IQy12+1+jKcc1A/Yx4KuL62Bn6+ztkiitRVW1T/7ikAh675pOs3I+8hyXuRknDpTteeptw4Bw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/choices.js/1.1.6/choices.min.js" integrity="sha512-7PQ3MLNFhvDn/IQy12+1+jKcc1A/Yx4KuL62Bn6+ztkiitRVW1T/7ikAh675pOs3I+8hyXuRknDpTteeptw4Bw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+<!-- new  -->
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
 <!-- range input slider  -->
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
@@ -48,7 +54,7 @@
  
     </script>
   </head>
-  <body class="relative font-poppins px-2">
+  <body class="relative font-poppins px-4">
    <!-- Navbar -->
    <nav class="bg-white shadow-lg py-4">
     <div class="max-w-6xl mx-auto px-4">
@@ -869,32 +875,34 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
       </div>
       <!-- end of copyright section  -->
     </footer>
-    <section class="bottom-navigation block md:hidden text-sm w-full max-w-screen-sm mx-auto flex--wrap fixed bottom-0 left-0 overflow-x--auto px-1 rounded-lg bg-white z-10">
-<div class="bottom-nav-wrapper flex flex-row items-center justify-center">
-  <div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
-    <i class="fas fa-home"></i>
-    <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Home</a>
+<div class="block">
+  <section class="bottom-navigation block md:hidden text-sm w-full max-w-screen--sm mx-auto flex--wrap fixed bottom-0 left--0 overflow-x--auto px-1 rounded-lg bg-white z-10">
+    <div class="bottom-nav-wrapper flex flex-row items-center justify-center">
+      <div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
+        <i class="fas fa-home"></i>
+        <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Home</a>
+    </div>
+    <div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
+        <i class="fas fa-search"></i>
+        <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Search</a>
+    </div>
+    <div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
+        <i class="fas fa-users"></i>
+        <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Speakers</a>
+    </div>
+    <div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
+        <i class="fas fa-chart-line"></i>
+        <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Stocks</a>
+    </div>
+    <div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
+        <i class="fas fa-cog"></i>
+        <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Settings</a>
+    </div>
+    
+    </div>
+            <!-- Add similar divs for other navigation items here -->
+        </section>
 </div>
-<div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
-    <i class="fas fa-search"></i>
-    <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Search</a>
-</div>
-<div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
-    <i class="fas fa-users"></i>
-    <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Speakers</a>
-</div>
-<div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
-    <i class="fas fa-chart-line"></i>
-    <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Stocks</a>
-</div>
-<div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
-    <i class="fas fa-cog"></i>
-    <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Settings</a>
-</div>
-
-</div>
-        <!-- Add similar divs for other navigation items here -->
-    </section>
     
     
     
@@ -903,61 +911,7 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
 
    
     <script>
-// document.addEventListener('DOMContentLoaded', function () {
-//     var el = document.querySelector('.tailwind-choices');
-//     var choices = new Choices(el, {
-//         searchEnabled: true,
-//         removeItemButton: true,
-//         shouldSort: false,
-//     });
-//     var searchResults = document.querySelector('.speaker-search-result');
-//     // console.log("before"+searchResults);
-// el.addEventListener('change', function() {
-//     var selectedValues = choices.getValue(true); // Get selected values
-//     // console.log("after"+searchResults);
-//     // Clear the current content
-//     searchResults.innerHTML = '';
 
-//     // Iterate over selected values and append new elements
-//     selectedValues.forEach(function(value) {
-//         var div = document.createElement('div');
-//         div.className = 'speaker flex flex-row items-center bg-primaryColor text-center px-4 py-2 rounded-3xl';
-//         div.innerHTML = '<img src="assets/people.png" class="mr-1" alt=""/> <div class="text-sm md:text-md">' + value + '</div>';
-//         searchResults.appendChild(div);
-//     });
-// });
-
-// });
-
-//end of filter speaker search
-        //slider for hero
-        // const lowerSlider = document.getElementById('lower');
-        // const upperSlider = document.getElementById('upper');
-
-        // document.getElementById('slider').addEventListener('input', (event) => {
-        //     let lowerVal = parseInt(lowerSlider.value);
-        //     let upperVal = parseInt(upperSlider.value);
-
-        //     if (lowerVal > upperVal) {
-        //         let temp = lowerVal;
-        //         lowerSlider.value = upperVal;
-        //         upperSlider.value = temp;
-        //     }
-        // });
-
-
-                // JavaScript for Modal Functionality
-        //         const openModal = document.getElementById('search');
-        // const closeModal = document.getElementById('closeModal');
-        // const modal = document.getElementById('search-filter');
-
-        // openModal.addEventListener('click', function(){
-        //     modal.classList.remove('hidden');
-        // });
-
-        // closeModal.addEventListener('click', function(){
-        //     modal.classList.add('hidden');
-        // });
 
         //end of modal 
   //     var mySwiper = new Swiper(".mySwiper", {

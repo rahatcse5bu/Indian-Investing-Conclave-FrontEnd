@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var searchResults = document.querySelector('.speaker-search-result');
     // console.log("before"+searchResults);
 el.addEventListener('change', function() {
-    alert(choices.getValue(true));
+    // alert(choices.getValue(true));
     var selectedValues = choices.getValue(true); // Get selected values
     // console.log("after"+searchResults);
     // Clear the current content
