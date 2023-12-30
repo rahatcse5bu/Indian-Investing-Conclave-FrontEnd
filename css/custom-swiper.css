@@ -1,0 +1,18 @@
+.swiper-button-prev2, .swiper-button-next2 {
+    /* Adjust this to position your buttons correctly */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4rem;
+    height: 4rem;
+    background: #FFF; /* Change to your desired background */
+    color: #000; /* Change to your desired icon color */
+    border-radius: 9999px; /* Fully rounded corners */
+  }
+  .swiper-button-prev2 {
+    left: 0;
+    margin-left: 10px; /* Adjust margin to move further from the edge */
+  }
+  .swiper-button-next2 {
+    right: 0;
+    margin-right: 10px; /* Adjust margin to move further from the edge */
+  }

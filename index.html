@@ -36,219 +36,16 @@
 <!-- Slick Carousel JS -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 
-
+<link rel="stylesheet" type="text/css" href="css/speaker-choice.css"/>
+<link rel="stylesheet" type="text/css" href="css/range-slider.css"/>
+<link rel="stylesheet" type="text/css" href="css/search-filter.css"/>
+<link rel="stylesheet" type="text/css" href="css/bottom-nav.css"/>
+<link rel="stylesheet" type="text/css" href="css/slick-carousel.css"/>
     <style>
-        #search-filter{
-            z-index: 999999;
-        }
-      /* Additional custom styles can go here */
-      .slider-container {
-            position: relative;
-            padding-top: 20px; /* Space for labels */
-        }
-        .slider-label {
-            position: absolute;
-            top: 0;
-            transform: translateX(-50%);
-            white-space: nowrap;
-        }
-
-        /* footer slider success stories  */
-          /* Custom styles for navigation buttons */
-
-          .swiper-button-prev2, .swiper-button-next2 {
-    /* Adjust this to position your buttons correctly */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4rem;
-    height: 4rem;
-    background: #FFF; /* Change to your desired background */
-    color: #000; /* Change to your desired icon color */
-    border-radius: 9999px; /* Fully rounded corners */
-  }
-  .swiper-button-prev2 {
-    left: 0;
-    margin-left: 10px; /* Adjust margin to move further from the edge */
-  }
-  .swiper-button-next2 {
-    right: 0;
-    margin-right: 10px; /* Adjust margin to move further from the edge */
-  }
-  /* end footer slider  */
-        .label-15min { left: 5%; }
-        .label-30min { left: 33%; }
-        .label-45min { left: 66%; }
-        .label-above45min { left: 90%; }
-        .thumb {
-            height: 20px;
-            width: 20px;
-            background-color: #4CAF50;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-        .track {
-            height: 4px;
-            background-color: #ddd;
-        }
-
-        .choices {
-    @apply w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm;
-}
-.choices{
-    width:100%;
-}
-.choices__list--dropdown {
-    @apply bg-white border border-gray-300 rounded-md;
-}
-
-/* .choices__item {
-    @apply bg-indigo-100;
-} */
-
-.choices__item.choices__item--selectable {
-    background-color: #FFC226 !important;
-    /* @apply bg-primaryColor border-primaryColor; */
-    border: 1px solid #FFC226!important;
-}
-.choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
-
-    border-left: 1px solid white !important;
-  
-}
-.wrapper{
-    position: relative;
-    width: 95vmin;
-    background-color: #ffffff;
-    padding: 10px 20px 20px 10px;
-    border-radius: 10px;
-}
-.container{
-    position: relative;
-    width: 100%;
-    height: 100px;
-    margin-top: 0px;
-}
-.dual-range-sider input[type="range"]{
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 100%;
-    outline: none;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    background-color: transparent;
-    pointer-events: none;
-}
-.dual-range-sider .slider-track{
-    width: 100%;
-    height: 5px;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    border-radius: 5px;
-}
-.dual-range-sider input[type="range"]::-webkit-slider-runnable-track{
-    -webkit-appearance: none;
-    height: 5px;
-}
-.dual-range-sider input[type="range"]::-moz-range-track{
-    -moz-appearance: none;
-    height: 5px;
-}
-.dual-range-sider input[type="range"]::-ms-track{
-    appearance: none;
-    height: 5px;
-}
-.dual-range-sider input[type="range"]::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    height: 1.7em;
-    width: 1.7em;
-    background-color: #3264fe;
-    cursor: pointer;
-    margin-top: -9px;
-    pointer-events: auto;
-    border-radius: 50%;
-}
-.dual-range-sider input[type="range"]::-moz-range-thumb{
-    -webkit-appearance: none;
-    height: 1.7em;
-    width: 1.7em;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: #3264fe;
-    pointer-events: auto;
-}
-.dual-range-sider input[type="range"]::-ms-thumb{
-    appearance: none;
-    height: 1.7em;
-    width: 1.7em;
-    cursor: pointer;
-    border-radius: 50%;
-    background-color: #3264fe;
-    pointer-events: auto;
-}
-.dual-range-sider input[type="range"]:active::-webkit-slider-thumb{
-    background-color: #ffffff;
-    border: 3px solid #3264fe;
-}
-.values{
-    background-color: #3264fe;
-    width: 32%;
-    position: relative;
-    margin: auto;
-    padding: 10px 0;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 25px;
-    color: #ffffff;
-}
-/* .values:before{
-    content: "";
-    position: absolute;
-    height: 0;
-    width: 0;
-    border-top: 15px solid #3264fe;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    margin: auto;
-    bottom: -14px;
-    left: 0;
-    right: 0;
-} */
-/* For screens smaller than 768px (e.g., mobile devices) */
-@media (max-width: 767px) {
-    .bottom-navigation {
-        max-width: 100%; /* Allow the bar to take full width on small screens */
-    }
-}
-
-.slick-prev, .slick-next{
-  color: black !important;
-}
 
     </style>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              headingColor: "#2C3051",
-              paragraphColor: "#9B9B9B",
-              primaryColor: "#FFC226",
-            },
-            padding: {
-        '5xl': '3rem', // Equivalent to 48px
-      },
-      fontFamily: {
-        poppins: ['Poppins', 'sans-serif'],
-      },
-          },
-        },
-      };
+    <script src="js/tailwind-config.js">
+ 
     </script>
   </head>
   <body class="relative font-poppins px-2">
@@ -316,7 +113,7 @@
 </ul>
 </div>
 <!-- Filter Section Starts  -->
-<div id="search-filter" class="filter-section hidden absolute top-[10%] left-20% inset-0 bg-opacity--50 overflow-y-auto  max-w-6xl mx-auto my-4 py-4 px-6 bg-white border border-gray-300 rounded-xl z-50">
+<div id="search-filter" class="filter-section hidden absolute top-[3%] left-20% inset-0 bg-opacity--50 overflow-y-auto  max-w-6xl mx-auto my-4 py-4 px-6 bg-white border border-gray-300 rounded-xl z-50">
     <!-- Close button starts  -->
     <div id="closeModal" class="absolute top-0 right-[4px] p-2 cursor-pointer text-white bg-red-700 border border-red-700 rounded-full flex items-center justify-center hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" role="button" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -1072,28 +869,30 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
       </div>
       <!-- end of copyright section  -->
     </footer>
-    <section class="bottom-navigation block md:hidden flex flex-row items-center justify-center text-xs w-full max-w-screen-sm mx-auto flex--wrap fixed bottom-0 left-0 overflow-x--auto px-1 rounded-lg bg-white z-10">
-        <div class="bottom-nav-item py-4 px-2 mt-2 text-center flex flex-col items-center">
-            <i class="fas fa-home"></i>
-            <a href="#" class="text-xs text-gray-700 underline hover:no-underline">Home</a>
-        </div>
-        <div class="bottom-nav-item py-4 px-2 mt-2 text-center flex flex-col items-center">
-            <i class="fas fa-search"></i>
-            <a href="#" class="text-xs text-gray-700 underline hover:no-underline">Search</a>
-        </div>
-        <div class="bottom-nav-item py-4 px-2 mt-2 text-center flex flex-col items-center">
-            <i class="fas fa-users"></i>
-            <a href="#" class="text-xs text-gray-700 underline hover:no-underline">Speakers</a>
-        </div>
-        <div class="bottom-nav-item py-4 px-2 mt-2 text-center flex flex-col items-center">
-            <i class="fas fa-chart-line"></i>
-            <a href="#" class="text-xs text-gray-700 underline hover:no-underline">Stocks</a>
-        </div>
-        <div class="bottom-nav-item py-4 px-2 mt-2 text-center flex flex-col items-center">
-            <i class="fas fa-cog"></i>
-            <a href="#" class="text-xs text-gray-700 underline hover:no-underline">Settings</a>
-        </div>
+    <section class="bottom-navigation block md:hidden text-sm w-full max-w-screen-sm mx-auto flex--wrap fixed bottom-0 left-0 overflow-x--auto px-1 rounded-lg bg-white z-10">
+<div class="bottom-nav-wrapper flex flex-row items-center justify-center">
+  <div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
+    <i class="fas fa-home"></i>
+    <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Home</a>
+</div>
+<div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
+    <i class="fas fa-search"></i>
+    <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Search</a>
+</div>
+<div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
+    <i class="fas fa-users"></i>
+    <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Speakers</a>
+</div>
+<div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
+    <i class="fas fa-chart-line"></i>
+    <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Stocks</a>
+</div>
+<div class="bottom-nav-item py-4 px-2  text-center flex flex-col items-center">
+    <i class="fas fa-cog"></i>
+    <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Settings</a>
+</div>
 
+</div>
         <!-- Add similar divs for other navigation items here -->
     </section>
     
@@ -1104,31 +903,31 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
 
    
     <script>
-document.addEventListener('DOMContentLoaded', function () {
-    var el = document.querySelector('.tailwind-choices');
-    var choices = new Choices(el, {
-        searchEnabled: true,
-        removeItemButton: true,
-        shouldSort: false,
-    });
-    var searchResults = document.querySelector('.speaker-search-result');
-    // console.log("before"+searchResults);
-el.addEventListener('change', function() {
-    var selectedValues = choices.getValue(true); // Get selected values
-    // console.log("after"+searchResults);
-    // Clear the current content
-    searchResults.innerHTML = '';
+// document.addEventListener('DOMContentLoaded', function () {
+//     var el = document.querySelector('.tailwind-choices');
+//     var choices = new Choices(el, {
+//         searchEnabled: true,
+//         removeItemButton: true,
+//         shouldSort: false,
+//     });
+//     var searchResults = document.querySelector('.speaker-search-result');
+//     // console.log("before"+searchResults);
+// el.addEventListener('change', function() {
+//     var selectedValues = choices.getValue(true); // Get selected values
+//     // console.log("after"+searchResults);
+//     // Clear the current content
+//     searchResults.innerHTML = '';
 
-    // Iterate over selected values and append new elements
-    selectedValues.forEach(function(value) {
-        var div = document.createElement('div');
-        div.className = 'speaker flex flex-row items-center bg-primaryColor text-center px-4 py-2 rounded-3xl';
-        div.innerHTML = '<img src="assets/people.png" class="mr-1" alt=""/> <div class="text-sm md:text-md">' + value + '</div>';
-        searchResults.appendChild(div);
-    });
-});
+//     // Iterate over selected values and append new elements
+//     selectedValues.forEach(function(value) {
+//         var div = document.createElement('div');
+//         div.className = 'speaker flex flex-row items-center bg-primaryColor text-center px-4 py-2 rounded-3xl';
+//         div.innerHTML = '<img src="assets/people.png" class="mr-1" alt=""/> <div class="text-sm md:text-md">' + value + '</div>';
+//         searchResults.appendChild(div);
+//     });
+// });
 
-});
+// });
 
 //end of filter speaker search
         //slider for hero
@@ -1148,45 +947,45 @@ el.addEventListener('change', function() {
 
 
                 // JavaScript for Modal Functionality
-                const openModal = document.getElementById('search');
-        const closeModal = document.getElementById('closeModal');
-        const modal = document.getElementById('search-filter');
+        //         const openModal = document.getElementById('search');
+        // const closeModal = document.getElementById('closeModal');
+        // const modal = document.getElementById('search-filter');
 
-        openModal.addEventListener('click', function(){
-            modal.classList.remove('hidden');
-        });
+        // openModal.addEventListener('click', function(){
+        //     modal.classList.remove('hidden');
+        // });
 
-        closeModal.addEventListener('click', function(){
-            modal.classList.add('hidden');
-        });
+        // closeModal.addEventListener('click', function(){
+        //     modal.classList.add('hidden');
+        // });
 
         //end of modal 
-      var mySwiper = new Swiper(".mySwiper", {
-        // Optional parameters
-        direction: "horizontal",
-        loop: true,
-        slidesPerView: 1,
-        spaceBetween: 30,
-        autoplay: {
-        delay: 2500, // Autoplay delay in milliseconds
-        disableOnInteraction: false, // When set to false, autoplay will not be disabled after user interactions
-  },
-        // If you need pagination
-        pagination: {
-          el: ".swiper-pagination",
-        },
+  //     var mySwiper = new Swiper(".mySwiper", {
+  //       // Optional parameters
+  //       direction: "horizontal",
+  //       loop: true,
+  //       slidesPerView: 1,
+  //       spaceBetween: 30,
+  //       autoplay: {
+  //       delay: 2500, // Autoplay delay in milliseconds
+  //       disableOnInteraction: false, // When set to false, autoplay will not be disabled after user interactions
+  // },
+  //       // If you need pagination
+  //       pagination: {
+  //         el: ".swiper-pagination",
+  //       },
 
-        // Navigation arrows
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
+  //       // Navigation arrows
+  //       navigation: {
+  //         nextEl: ".swiper-button-next",
+  //         prevEl: ".swiper-button-prev",
+  //       },
 
-        // And if you need scrollbar
-        scrollbar: {
-          el: ".swiper-scrollbar",
-        },
-      });
+  //       // And if you need scrollbar
+  //       scrollbar: {
+  //         el: ".swiper-scrollbar",
+  //       },
+  //     });
 
     //   footer slider for success stories
 //       var mySwiper2 = new Swiper(".my-footer-swiper", {
@@ -1209,59 +1008,66 @@ el.addEventListener('change', function() {
 //   });
 
   // mobile menu handle 
-  const mobileMenuButton = document.querySelector('.mobile-menu-button');
-        const mobileMenu = document.querySelector('.mobile-menu');
+  // const mobileMenuButton = document.querySelector('.mobile-menu-button');
+  //       const mobileMenu = document.querySelector('.mobile-menu');
 
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
+  //       mobileMenuButton.addEventListener('click', () => {
+  //           mobileMenu.classList.toggle('hidden');
+  //       });
 
     //  er 
-// dual range slider 
-      window.onload = function(){
-    slideOne();
-    slideTwo();
-}
-let sliderOne = document.getElementById("slider-1");
-let sliderTwo = document.getElementById("slider-2");
-let displayValOne = document.getElementById("range1");
-let displayValTwo = document.getElementById("range2");
-let minGap = 0;
-let sliderTrack = document.querySelector(".slider-track");
-let sliderMaxValue = document.getElementById("slider-1").max;
-function slideOne(){
-    if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
-        sliderOne.value = parseInt(sliderTwo.value) - minGap;
-    }
-    displayValOne.textContent = sliderOne.value;
-    fillColor();
-}
-function slideTwo(){
-    if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
-        sliderTwo.value = parseInt(sliderOne.value) + minGap;
-    }
-    displayValTwo.textContent = sliderTwo.value;
-    fillColor();
-}
-function fillColor(){
-    percent1 = (sliderOne.value / sliderMaxValue) * 100;
-    percent2 = (sliderTwo.value / sliderMaxValue) * 100;
-    sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
-}
+// // dual range slider 
+//       window.onload = function(){
+//     slideOne();
+//     slideTwo();
+// }
+// let sliderOne = document.getElementById("slider-1");
+// let sliderTwo = document.getElementById("slider-2");
+// let displayValOne = document.getElementById("range1");
+// let displayValTwo = document.getElementById("range2");
+// let minGap = 0;
+// let sliderTrack = document.querySelector(".slider-track");
+// let sliderMaxValue = document.getElementById("slider-1").max;
+// function slideOne(){
+//     if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
+//         sliderOne.value = parseInt(sliderTwo.value) - minGap;
+//     }
+//     displayValOne.textContent = sliderOne.value;
+//     fillColor();
+// }
+// function slideTwo(){
+//     if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
+//         sliderTwo.value = parseInt(sliderOne.value) + minGap;
+//     }
+//     displayValTwo.textContent = sliderTwo.value;
+//     fillColor();
+// }
+// function fillColor(){
+//     percent1 = (sliderOne.value / sliderMaxValue) * 100;
+//     percent2 = (sliderTwo.value / sliderMaxValue) * 100;
+//     sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
+// }
 
-// end dual range 
+// // end dual range 
 
-$(document).ready(function(){
-        $('.my-footer-slick').slick({
-            slidesToShow: 1, // Number of visible slides
-            slidesToScroll: 1, // Number of slides to scroll
-            autoplay: true, // Auto-play slides
-            autoplaySpeed: 3000, // Auto-play speed in milliseconds (optional)
-            prevArrow: $('.slick-prev'), // Use the classes of the buttons as selectors
-            nextArrow: $('.slick-next'), // Use the classes of the buttons as selectors
-            // Add more configuration options as needed
-        });
-    });
+// $(document).ready(function(){
+//         $('.my-footer-slick').slick({
+//             slidesToShow: 1, // Number of visible slides
+//             slidesToScroll: 1, // Number of slides to scroll
+//             autoplay: true, // Auto-play slides
+//             autoplaySpeed: 3000, // Auto-play speed in milliseconds (optional)
+//             prevArrow: $('.slick-prev'), // Use the classes of the buttons as selectors
+//             nextArrow: $('.slick-next'), // Use the classes of the buttons as selectors
+//             // Add more configuration options as needed
+//         });
+//     });
     </script>
+    <script src="js/hero-slider.js"></script>
+    <script src="js/speaker-select-choice.js"></script>
+    <!-- <script src="js/speaker-select-choice.js"></script> -->
+    <script src="js/filter-modal.js"></script>
+    <script src="js/dual-range-slider.js"></script>
+    <script src="js/mobile-menu.js"></script>
+    <script src="js/success-story.js"></script>
   </body>
 </html>

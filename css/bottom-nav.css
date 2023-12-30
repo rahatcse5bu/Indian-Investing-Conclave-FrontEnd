@@ -1,0 +1,6 @@
+/* For screens smaller than 768px (e.g., mobile devices) */
+@media (max-width: 767px) {
+    .bottom-navigation {
+        max-width: 100%; /* Allow the bar to take full width on small screens */
+    }
+}

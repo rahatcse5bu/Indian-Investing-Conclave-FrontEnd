@@ -1,0 +1,24 @@
+.choices {
+    @apply w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm;
+}
+.choices{
+    width:100%;
+}
+.choices__list--dropdown {
+    @apply bg-white border border-gray-300 rounded-md;
+}
+
+/* .choices__item {
+    @apply bg-indigo-100;
+} */
+
+.choices__item.choices__item--selectable {
+    background-color: #FFC226 !important;
+    /* @apply bg-primaryColor border-primaryColor; */
+    border: 1px solid #FFC226!important;
+}
+.choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
+
+    border-left: 1px solid white !important;
+  
+}
