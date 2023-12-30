@@ -1,5 +1,6 @@
+
 document.addEventListener('DOMContentLoaded', function () {
-    alert('ghwvgh')
+    // alert('ghwvgh')
     var el = document.querySelector('.tailwind-choices');
     var choices = new Choices(el, {
         searchEnabled: true,
