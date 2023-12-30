@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Home Page</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/848cfc15aa.js" crossorigin="anonymous"></script>
+
+ <!-- Include Choices CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
+<!-- Include Choices.js script -->
+<script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+
+
+<!-- range input slider  -->
+<script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <style>
+        #search-filter{
+            z-index: 999999;
+        }
+      /* Additional custom styles can go here */
+      .slider-container {
+            position: relative;
+            padding-top: 20px; /* Space for labels */
+        }
+        .slider-label {
+            position: absolute;
+            top: 0;
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        /* footer slider success stories  */
+          /* Custom styles for navigation buttons */
+
+          .swiper-button-prev2, .swiper-button-next2 {
+    /* Adjust this to position your buttons correctly */
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4rem;
+    height: 4rem;
+    background: #FFF; /* Change to your desired background */
+    color: #000; /* Change to your desired icon color */
+    border-radius: 9999px; /* Fully rounded corners */
+  }
+  .swiper-button-prev2 {
+    left: 0;
+    margin-left: 10px; /* Adjust margin to move further from the edge */
+  }
+  .swiper-button-next2 {
+    right: 0;
+    margin-right: 10px; /* Adjust margin to move further from the edge */
+  }
+  /* end footer slider  */
+        .label-15min { left: 5%; }
+        .label-30min { left: 33%; }
+        .label-45min { left: 66%; }
+        .label-above45min { left: 90%; }
+        .thumb {
+            height: 20px;
+            width: 20px;
+            background-color: #4CAF50;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .track {
+            height: 4px;
+            background-color: #ddd;
+        }
+
+        .choices {
+    @apply w-full focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm;
+}
+.choices{
+    width:100%;
+}
+.choices__list--dropdown {
+    @apply bg-white border border-gray-300 rounded-md;
+}
+
+/* .choices__item {
+    @apply bg-indigo-100;
+} */
+
+.choices__item.choices__item--selectable {
+    background-color: #FFC226 !important;
+    /* @apply bg-primaryColor border-primaryColor; */
+    border: 1px solid #FFC226!important;
+}
+.choices[data-type*=select-multiple] .choices__button, .choices[data-type*=text] .choices__button {
+
+    border-left: 1px solid white !important;
+  
+}
+.wrapper{
+    position: relative;
+    width: 95vmin;
+    background-color: #ffffff;
+    padding: 10px 20px 20px 10px;
+    border-radius: 10px;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    margin-top: 0px;
+}
+.dual-range-sider input[type="range"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 100%;
+    outline: none;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    background-color: transparent;
+    pointer-events: none;
+}
+.dual-range-sider .slider-track{
+    width: 100%;
+    height: 5px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    border-radius: 5px;
+}
+.dual-range-sider input[type="range"]::-webkit-slider-runnable-track{
+    -webkit-appearance: none;
+    height: 5px;
+}
+.dual-range-sider input[type="range"]::-moz-range-track{
+    -moz-appearance: none;
+    height: 5px;
+}
+.dual-range-sider input[type="range"]::-ms-track{
+    appearance: none;
+    height: 5px;
+}
+.dual-range-sider input[type="range"]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    background-color: #3264fe;
+    cursor: pointer;
+    margin-top: -9px;
+    pointer-events: auto;
+    border-radius: 50%;
+}
+.dual-range-sider input[type="range"]::-moz-range-thumb{
+    -webkit-appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #3264fe;
+    pointer-events: auto;
+}
+.dual-range-sider input[type="range"]::-ms-thumb{
+    appearance: none;
+    height: 1.7em;
+    width: 1.7em;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: #3264fe;
+    pointer-events: auto;
+}
+.dual-range-sider input[type="range"]:active::-webkit-slider-thumb{
+    background-color: #ffffff;
+    border: 3px solid #3264fe;
+}
+.values{
+    background-color: #3264fe;
+    width: 32%;
+    position: relative;
+    margin: auto;
+    padding: 10px 0;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 25px;
+    color: #ffffff;
+}
+/* .values:before{
+    content: "";
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-top: 15px solid #3264fe;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    margin: auto;
+    bottom: -14px;
+    left: 0;
+    right: 0;
+} */
+/* For screens smaller than 768px (e.g., mobile devices) */
+@media (max-width: 767px) {
+    .bottom-navigation {
+        max-width: 100%; /* Allow the bar to take full width on small screens */
+    }
+}
+
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              headingColor: "#2C3051",
+              paragraphColor: "#9B9B9B",
+              primaryColor: "#FFC226",
+            },
+            padding: {
+        '5xl': '3rem', // Equivalent to 48px
+      },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+      },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="font-poppins px-2 overflow-hidden">
+   <!-- Navbar -->
+   <nav class="bg-white shadow-lg py-4">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex order-1 items-center py-4 px-2">
+                <img src="../assets/logo.png" alt="Logo">
+            </a>
+
+
+            <!-- Primary Navbar items -->
+            <div class="hidden md:flex md:order-2 items-center space-x-1 main-menu">
+                <a href="#" class="py-4 px-2 text-primaryColor border-b-4 border-primaryColor font-semibold">Home</a>
+                <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Stock</a>
+                <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Speakers</a>
+                <a href="#" class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Contact Us</a>
+            </div>
+            <!-- search header section  -->
+                        <!-- Hamburger Menu -->
+                        <div class="md:hidden order-3 md:order-3 flex items-center">
+                            <button class="outline-none mobile-menu-button">
+                                <svg class="w-6 h-6 text-gray-700 hover:text-primaryColor" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path d="M4 6h16M4 12h16m-7 6h7"></path>
+                                </svg>
+                            </button>
+                        </div>
+            
+            <div class="search order-2 md:order-3" id="search">
+                <div
+                  type="text"
+                  class="relative flex flex-row py-1 px-4 md:w-full lg:w-[250px] rounded-xl border border-primaryColor"
+                >
+                  <img alt="src-icon" src="../assets/search-icon.png" class="" />
+                  <h4 class="text-xl ml-2">Search ...</h4>
+                </div>
+              </div>
+              <!-- end of search  -->
+            <!-- Secondary Navbar items -->
+            <div class="hidden md:order-4 md:flex items-center space-x-3">
+                <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</a>
+                <a href="#" class="py-2 px-2 font-medium text-white bg-primaryColor rounded hover:bg-green-400 transition duration-300">Get Started</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="hidden mobile-menu">
+    <ul class="">
+        <li class="active"><a href="#" class="block text-sm px-2 py-4 text-white bg-primaryColor font-semibold">Home</a></li>
+        <li><a href="#services" class="block text-sm px-2 py-4 hover:bg-primaryColor transition duration-300">Services</a></li>
+        <li><a href="#about" class="block text-sm px-2 py-4 hover:bg-primaryColor transition duration-300">About</a></li>
+        <li><a href="#contact" class="block text-sm px-2 py-4 hover:bg-primaryColor transition duration-300">Contact Us</a></li>
+    </ul>
+    <div class="h-3"></div>
+    <ul class="flex flex-row items-center justify-between py-4 px-4">
+<li> <a href="#" class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300">Log In</a>
+</li>        
+<li>
+<a href="#" class="py-2 px-2 font-medium text-white bg-primaryColor rounded hover:bg-green-400 transition duration-300">Get Started</a>
+</li>
+</ul>
+</div>
+<!-- Filter Section Starts  -->
+<div id="search-filter" class="filter-section hidden absolute top-[10%] left-20% inset-0 bg-opacity--50 overflow-y-auto  max-w-6xl mx-auto my-4 py-4 px-6 bg-white border border-gray-300 rounded-xl z-50">
+    <!-- Close button starts  -->
+    <div id="closeModal" class="absolute top-0 right-[4px] p-2 cursor-pointer text-white bg-red-700 border border-red-700 rounded-full flex items-center justify-center hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" role="button" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </div>
+    
+    <!-- Close Button Ends  -->
+<div class="flex flex-col md:flex-row">
+    <div class="col-left basis-2/5 py-2">
+        <!-- search-speaker starts  -->
+<!-- <div class="search-speaker w-full flex flex-row items-center justify-start px-2 py-1 border border-gray-300 rounded-xl">
+  <img class="bg-primaryColor px-2 py-1 rounded-md mr-2" src="../assets/search-speaker.png" alt=""/>
+    <input v-model="query" @keydown="search()" placeholder="Search Speakers..." class="bg-transparent focus:out py-1"/>
+</div> -->
+<!-- <select class="tailwind-choices" multiple>
+    <option value="razin">Razin KRK</option>
+    <option value="rahat">Md. Rahat</option>
+    <option value="subol">Subal Karmaker</option>
+    <option value="sayem">Sayem Hossen</option>
+    <option value="Saad">Samiur Saad</option>
+  
+</select> -->
+
+<div class="search-speaker w-full flex flex-row items-center justify-start px-2 py-1 border border-gray-300 rounded-xl">
+  <img class="bg-primaryColor px-2 py-1 rounded-md mr-2" src="../assets/search-speaker.png" alt=""/>
+  <select class="tailwind-choices w-full" multiple>
+    <option value="Razin KRK">Razin KRK</option>
+    <option value="Md. Rahat">Md. Rahat</option>
+    <option value="Subal Karmaker">Subal Karmaker</option>
+    <option value="Sayem Hossen">Sayem Hossen</option>
+    <option value="Samiur Saad">Samiur Saad</option>
+    <!-- More options -->
+</select>
+</div>
+
+<!-- search-speaker Result  starts -->
+<div class="speaker-search-result grid grid-cols-2 gap-4 my-2">
+<div class="speaker flex flex-row items-center bg-primaryColor text-center px-4 py-2 rounded-3xl">
+  <img src="../assets/people.png" class="mr-1" alt=""/>  <div class="text-sm md:text-md">Md. Rahat</div>
+</div>
+<div class="speaker flex flex-row items-center bg-primaryColor text-center px-4 py-2 rounded-3xl">
+  <img src="../assets/people.png" class="mr-1" alt=""/>  <div class="text-sm md:text-md">Razin KRK</div>
+</div>
+<div class="speaker flex flex-row items-center bg-primaryColor text-center px-4 py-2 rounded-3xl">
+  <img src="../assets/people.png" class="mr-1" alt=""/>  <div class="text-sm md:text-md">Sayem Hossen</div>
+</div>
+</div>
+<!-- search-speaker Result  Ends  -->
+        <!-- sector-industry dropdown starts  -->
+        <div class="sector-industry w-full flex flex-row items-center justify-start px-2 py-2 border border-gray-300 rounded-xl">
+            <img class="bg-primaryColor px-2 py-1 rounded-md mr-2" src="../assets/industry.png" alt=""/>
+             <select class="w-full border-0">
+                <option value="">Industries & Sectors</option>
+                <option value="">IT & Telecommunications</option>
+                <option value="">Education & Research</option>
+                <option value="">Finance & Banking</option>
+             </select>
+          </div>
+          <!-- end of sector-industry dropdown -->
+<div class="market-cap-wrapper border border-gray-300 rounded-xl mt-2">
+    <div class="w-full flex flex-row items-center justify-start px-2 py-1 ">
+        <img class="bg-primaryColor px-2 py-2 rounded-md mr-4" src="../assets/rupee-symbol.png" alt=""/>
+        <h3>Market Cap</h3>
+      </div>
+    <!-- Market Cap tab  starts -->
+<div class="market-cap-tab grid grid-cols-3 gap-4 my-2">
+    <div class="text-sm md:text-md market-cap cursor-pointer active:bg-primaryColor text-center px-4 py-2 rounded-3xl">
+ <div>Small Cap</div>
+    </div>
+    <div class="text-sm md:text-md market-cap cursor-pointer bg-primaryColor active:bg-primaryColor text-center px-4 py-2 rounded-3xl">
+      <div>Mid Cap</div>
+    </div>
+    <div class=" text-sm md:text-md market-cap cursor-pointer active:bg-primaryColor text-center px-4 py-2 rounded-3xl">
+     <div>Large Cap</div>
+    </div>
+    </div>
+    <!-- Market Cap tab  Ends  -->
+</div>
+<!-- market cap wrapper section ends  -->
+    </div>
+    <!-- <div class="w-1 bg-gray-200 h-[500px] px-2"></div> -->
+
+    <div class="col-right basis-3/5 w-full bg-white px-4 py-2 mx-8">
+        <!-- Session Duration Starts  -->
+<div class="session-duration border border-gray-300 rounded-3xl py-4">
+    <div class="w-full flex flex-row items-center justify-start px-2 py-1 ">
+        <img class="bg-primaryColor px-2 py-2 rounded-md mr-4" src="../assets/session-duration.png" alt=""/>
+        <h3>Session Duration</h3>
+      </div>
+      <div class="w-full">
+        <div class="slider-container">
+            <span class="text-sm md:text-md slider-label label-15min">15 min</span>
+            <span class="text-sm md:text-md  slider-label label-30min">30 min</span>
+            <span class="text-sm md:text-md slider-label label-45min">45 min</span>
+            <span class="text-sm md:text-md slider-label label-above45min">Above 45 min</span>
+            <input type="range" min="15" max="46" value="15" class="session-slider w-full h-2 bg-primaryColor rounded-lg appearance-none cursor-pointer">
+        </div>
+    </div>
+</div>
+<!-- Session Duration Ends  -->
+        <!-- Time Release Starts  -->
+<div class="time-release border border-gray-300 rounded-3xl py-4 mt-8">
+    <div class="w-full flex flex-row items-center justify-start px-2 py-1 ">
+        <img class="bg-primaryColor px-2 py-2 rounded-md mr-4" src="../assets/time-release.png" alt=""/>
+        <h3>Time Of Release</h3>
+      </div>
+      <!-- <div class="w-full px-10">
+        <div class="relative">
+        
+            <div id="slider" class="track mt-10">
+                <input type="range" min="2001" max="2020" value="2001" id="lower" class="thumb absolute z-20 appearance-none">
+                <input type="range" min="2001" max="2020" value="2020" id="upper" class="thumb absolute z-10 appearance-none">
+            </div>
+           
+            <div class="flex justify-between text-xs mt-6">
+                <span>2001</span>
+                <span>2004</span>
+                <span>2007</span>
+                <span>2011</span>
+                <span>2014</span>
+                <span>2017</span>
+                <span>2020</span>
+            </div>
+        </div>
+    </div> -->
+    <div class="dual-range-sider wrapper">
+
+        <div class="container">
+            <!-- slider labels  -->
+            <div class="dual-range-slider-labels mb-4">
+                <div class="2000 absolute top-2  left-0">
+                2000
+                </div>
+                <div class="2005  absolute top-2  left-[14.29%]">
+                2005
+                </div>
+                <div class="2010  absolute top-2  left-[28.57%]">
+                2010
+                </div>
+                <div class="2015  absolute top-2  left-[42.86%]">
+                2015
+                </div>
+                <div class="2020  absolute top-2  left-[57.14%]">
+                2020
+                </div>
+                <div class="2025  absolute top-2  left-[71.43%]">
+                2025
+                </div>
+                <div class="2030 absolute top-2  left-[85.71%]">
+                2030
+                </div>
+                <div class="2035  absolute top-2  left-[95%]">
+                2035
+                </div>
+                        </div>
+                        <!-- end slider labels  -->
+            <div class="slider-track"></div>
+            <input type="range" min="2000" max="2035" value="2001" id="slider-1" oninput="slideOne()">
+            <input type="range" min="2000" max="2035" value="2023" id="slider-2" oninput="slideTwo()">
+        </div>
+
+        <div class="dual-range-label valuesf flex flex-row items-center justify-center">
+            <span id="range1" class="px-8 py-4 mr-4 bg-primaryColor rounded-xl ">
+                2000
+            </span>
+            <span> &dash; </span>
+            <span id="range2" class="px-8 py-4 ml-4 bg-primaryColor rounded-xl ">
+                2035
+            </span>
+        </div>
+    </div>
+</div>
+<!-- Time Release  Ends  -->
+    </div>
+
+</div>
+ <!-- bottom section of filter  -->
+ <div class="buttons my-4 tab flex flex-row items-center justify-end">
+    <div class="clear-btn cursor-pointer active:bg-primaryColor text-center text-red-800 mr-4 px-8 py-2 border border-red-800 rounded-3xl">
+        <div>Clear</div>
+           </div>
+
+           <div class="filter-btn cursor-pointer bg-primaryColor text-center px-8 py-2 rounded-3xl">
+            <div>Filter</div>
+               </div>
+ </div>
+</div>
+<!-- Filter Section Ends  -->
+    <!-- Hero Section -->
+    <div class="bg-white max-w-5xl mx-auto">
+      <!-- Swiper -->
+      <div class="swiper my-swiper-slide">
+        <div class="swiper-wrapper">
+          <!-- Slides 1 Starts -->
+    
+          <div class="swiper-slide">
+<div
+style=" background-image: url('../assets/slider1.png');background-size: cover;background-repeat: no-repeat;background-position: center center;"
+class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 px-8"
+>
+<div class="left-col bg-[#C1C1C1] bg-opacity-[90%] px-8 py-4 mb-4 rounded-2xl w-full md:w-[470px] md:h--[385px]">
+    <p class="text-headingColor md:text-[34px] font-semibold">Learn from masters at comfort of your location</p>
+<p class="">
+  Get unlimited access to all session recordings and slides !
+</p>
+<div class="flex flex-row items-center justify-center my-4">
+  <button class="bg-primaryColor px-8 py-4 mr-4 rounded-xl"><i class="fas fa-clock"></i>
+    Watch Now</button>
+  <button class="border border-headingColor px-8 py-4 rounded-xl"><i class="fas fa-gift"></i> Gift Event</button>
+</div>
+</div>
+<div class="col-right bg-white border-b-8 border-l-8 border-b-primaryColor border-l-primaryColor rounded-2xl p-8">
+<div class="flex flex-row items-center justify-start mb-4">
+    <i class="fas fa-hourglass mr-4"></i><span class="font-semibold">IIC+ at ₹ 490/month</span>
+</div>
+<div class="flex flex-row items-center justify-start">
+    <i class="fas fa-stopwatch mr-4"></i> Get access to 200+ Sessions
+</div>
+</div>
+</div>
+
+          </div>
+          <!-- end of slide-1  -->
+          <!-- Slides 2 Starts -->
+    
+          <div class="swiper-slide">
+            <div
+            style=" background-image: url('../assets/slider1.png');background-size: cover;background-repeat: no-repeat;background-position: center center;"
+            class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 px-8"
+            >
+            <div class="left-col bg-[#C1C1C1] bg-opacity-[90%] px-8 py-4 mb-4 rounded-2xl w-full md:w-[470px] md:h--[385px]">
+                <p class="text-headingColor md:text-[34px] font-semibold">Learn from masters at comfort of your location</p>
+            <p class="">
+  Get unlimited access to all session recordings and slides !
+</p>
+<div class="flex flex-row items-center justify-center my-4">
+  <button class="bg-primaryColor px-8 py-4 mr-4 rounded-xl"><i class="fas fa-clock"></i>
+    Watch Now</button>
+  <button class="border border-headingColor px-8 py-4 rounded-xl"><i class="fas fa-gift"></i> Gift Event</button>
+</div>
+</div>
+<div class="col-right bg-white border-b-8 border-l-8 border-b-primaryColor border-l-primaryColor rounded-2xl p-8">
+<div class="flex flex-row items-center justify-start mb-4">
+    <i class="fas fa-hourglass mr-4"></i><span class="font-semibold">IIC+ at ₹ 490/month</span>
+</div>
+<div class="flex flex-row items-center justify-start">
+    <i class="fas fa-stopwatch mr-4"></i> Get access to 200+ Sessions
+</div>
+</div>
+</div>
+
+          </div>
+          <!-- end of slide-2 -->
+          <!-- Slides 3 Starts -->
+    
+          <div class="swiper-slide">
+            <div
+            style=" background-image: url('../assets/slider1.png');background-size: cover;background-repeat: no-repeat;background-position: center center;"
+            class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 px-8"
+            >
+            <div class="left-col bg-[#C1C1C1] bg-opacity-[90%] px-8 py-4 mb-4 rounded-2xl w-full md:w-[470px] md:h--[385px]">
+                <p class="text-headingColor md:text-[34px] font-semibold">Learn from masters at comfort of your location</p>
+            <p class="">
+  Get unlimited access to all session recordings and slides !
+</p>
+<div class="flex flex-row items-center justify-center my-4">
+  <button class="bg-primaryColor px-8 py-4 mr-4 rounded-xl"><i class="fas fa-clock"></i>
+    Watch Now</button>
+  <button class="border border-headingColor px-8 py-4 rounded-xl"><i class="fas fa-gift"></i> Gift Event</button>
+</div>
+</div>
+<div class="col-right bg-white border-b-8 border-l-8 border-b-primaryColor border-l-primaryColor rounded-2xl p-8">
+<div class="flex flex-row items-center justify-start mb-4">
+    <i class="fas fa-hourglass mr-4"></i><span class="font-semibold">IIC+ at ₹ 490/month</span>
+</div>
+<div class="flex flex-row items-center justify-start">
+    <i class="fas fa-stopwatch mr-4"></i> Get access to 200+ Sessions
+</div>
+</div>
+</div>
+
+          </div>
+          <!-- end of slide-3  -->
+          <!-- ... -->
+        </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+    </div>
+    <!-- end of hero slider  -->
+    <!-- Best content Section starts  -->
+    <section class="max-w-5xl mx-auto best-contents my-16">
+      <h3 class="title text-center md:text-left text-2xl text-headingColor font-semibold">Best Contents Of Ours</h3>
+      <div class="md:grid grid-cols-5">
+        <p class="col-span-3 pr-4 py-1">
+          Explore our exclusive video series offering in-depth market analysis,
+          expert interviews, and timely updates on investment trends
+        </p>
+        <div class="col-span-2">
+          <div class="md:flex flex-row items-center justify-end">
+            <div class="px-4 py-2 border rounded-xl cursor-pointer text-center text-headingColor">
+              View All >>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- services grid starts  -->
+      <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-4 my-4">
+        <div class="service-card p-2 relative flex flex-col items-center border border-gray-300 rounded-xl">
+          <!-- paid starts  -->
+          <div
+            class="paid absolute top-2 left-2 flex flex-row items-center justify-between bg-primaryColor rounded-md py-2 px-4"
+          >
+            <img src="../assets/paid.png" alt="" />
+            <h4 class="ml-2">Paid</h4>
+          </div>
+          <!-- paid ends  -->
+          <img src="../assets/Service1.png" class="w-full"/>
+          <h3 class="p-2 mt-3 text-md font-medium">
+            What Makes the Good Platform Business for the betterment of the ...
+          </h3>
+          <div class="flex flex-row items-center justify-start px-2 pb-2">
+            <div class="mr-2">Alpha Series</div>
+            <div class="mr-2">
+              <img src="../assets/people.png" />
+            </div>
+            <div class="">Digant Hara</div>
+          </div>
+        </div>
+        <div class="service-card p-2 relative flex flex-col items-center border border-gray-300 rounded-xl">
+          <!-- paid starts  -->
+          <div
+            class="paid absolute top-2 left-2 flex flex-row items-center justify-between bg-primaryColor rounded-md py-2 px-4"
+          >
+            <img src="../assets/paid.png" alt="" />
+            <h4 class="ml-2">Paid</h4>
+          </div>
+          <!-- paid ends  -->
+          <img src="../assets/Service1.png" class="w-full"/>
+          <h3 class="p-2 mt-3 text-md font-medium">
+            Pharma APIs - Common Products, Uncommon Profits?
+          </h3>
+          <div class="flex flex-row items-center justify-start px-2 pb-2">
+            <div class="mr-2">Beta Series</div>
+            <div class="mr-2">
+              <img src="../assets/people.png" />
+            </div>
+            <div class="">Mike Hazz</div>
+          </div>
+        </div>
+        <div class="service-card p-2 relative flex flex-col items-center border border-gray-300 rounded-xl">
+          <!-- paid starts  -->
+          <div
+            class="paid absolute top-2 left-2 flex flex-row items-center justify-between bg-primaryColor rounded-md py-2 px-4"
+          >
+            <img src="../assets/paid.png" alt="" />
+            <h4 class="ml-2">Paid</h4>
+          </div>
+          <!-- paid ends  -->
+          <img src="../assets/Service2.png" class="w-full"/>
+          <h3 class="p-2 mt-3 text-md font-medium">
+            Manufacturing What Nobody Else Has Ever Done - Framework
+          </h3>
+          <div class="flex flex-row items-center justify-start px-2 pb-2">
+            <div class="mr-2">Alpha Series</div>
+            <div class="mr-2">
+              <img src="../assets/people.png" />
+            </div>
+            <div class="">Michel Velt</div>
+          </div>
+        </div>
+        <div class="service-card p-2 relative flex flex-col items-center border border-gray-300 rounded-xl">
+          <!-- paid starts  -->
+          <div
+            class="paid absolute top-2 left-2 flex flex-row items-center justify-between bg-primaryColor rounded-md py-2 px-4"
+          >
+            <img src="../assets/paid.png" alt="" />
+            <h4 class="ml-2">Paid</h4>
+          </div>
+          <!-- paid ends  -->
+          <img src="../assets/Service3.png" class="w-full"/>
+          <h3 class="p-2 mt-3 text-md font-medium">
+            What Makes the Good Platform Business for the betterment of the ...
+          </h3>
+          <div class="flex flex-row items-center justify-start px-2 pb-2">
+            <div class="mr-2">Alpha Series</div>
+            <div class="mr-2">
+              <img src="../assets/people.png" />
+            </div>
+            <div class="">Digant Hara</div>
+          </div>
+        </div>
+        <div class="service-card p-2 relative flex flex-col items-center border border-gray-300 rounded-xl">
+          <!-- paid starts  -->
+          <div
+            class="paid absolute top-2 left-2 flex flex-row items-center justify-between bg-primaryColor rounded-md py-2 px-4"
+          >
+            <img src="../assets/paid.png" alt="" />
+            <h4 class="ml-2">Paid</h4>
+          </div>
+          <!-- paid ends  -->
+          <img src="../assets/Service4.png" class="w-full"/>
+          <h3 class="p-2 mt-3 text-md font-medium">
+            What Makes the Good Platform Business for the betterment of the ...
+          </h3>
+          <div class="flex flex-row items-center justify-start px-2 pb-2">
+            <div class="mr-2">Beta Series</div>
+            <div class="mr-2">
+              <img src="../assets/people.png" />
+            </div>
+            <div class="">Donalt Filt</div>
+          </div>
+        </div>
+        <div class="service-card p-2 relative flex flex-col items-center border border-gray-300 rounded-xl">
+          <!-- paid starts  -->
+          <div
+            class="paid absolute top-2 left-2 flex flex-row items-center justify-between bg-primaryColor rounded-md py-2 px-4"
+          >
+            <img src="../assets/paid.png" alt="" />
+            <h4 class="ml-2">Paid</h4>
+          </div>
+          <!-- paid ends  -->
+          <img src="../assets/Service2.png" class="w-full"/>
+          <h3 class="p-2 mt-3 text-md font-medium">
+            Manufacturing What Nobody Else Has Ever Done - Framework
+          </h3>
+          <div class="flex flex-row items-center justify-start px-2 pb-2">
+            <div class="mr-2">Alpha Series</div>
+            <div class="mr-2">
+              <img src="../assets/people.png" />
+            </div>
+            <div class="">Michel Velt</div>
+          </div>
+        </div>
+        <div class="service-card p-2 relative border border-gray-300 rounded-xl">
+          <!-- paid starts  -->
+          <div
+            class="paid absolute top-2 left-2 flex flex-row items-center justify-between bg-primaryColor rounded-md py-2 px-4"
+          >
+            <img src="../assets/paid.png" alt="" />
+            <h4 class="ml-2">Paid</h4>
+          </div>
+          <!-- paid ends  -->
+          <img src="../assets/Service3.png" class="w-full"/>
+          <h3 class="p-2 mt-3 text-md font-medium">
+            What Makes the Good Platform Business for the betterment of the ...
+          </h3>
+          <div class="flex flex-row items-center justify-start px-2 pb-2">
+            <div class="mr-2">Alpha Series</div>
+            <div class="mr-2">
+              <img src="../assets/people.png" />
+            </div>
+            <div class="">Digant Hara</div>
+          </div>
+        </div>
+        <div class="service-card p-2 relative flex flex-col items-center border border-gray-300 rounded-xl">
+          <!-- paid starts  -->
+          <div
+            class="paid absolute top-2 left-2 flex flex-row items-center justify-between bg-primaryColor rounded-md py-2 px-4"
+          >
+            <img src="../assets/paid.png" alt="" />
+            <h4 class="ml-2">Paid</h4>
+          </div>
+          <!-- paid ends  -->
+          <img src="../assets/Service4.png" class="w-full"/>
+          <h3 class="p-2 mt-3 text-md font-medium">
+            What Makes the Good Platform Business for the betterment of the ...
+          </h3>
+          <div class="flex flex-row items-center justify-start px-2 pb-2">
+            <div class="mr-2">Beta Series</div>
+            <div class="mr-2">
+              <img src="../assets/people.png" />
+            </div>
+            <div class="">Donalt Filt</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End of Best content Section  -->
+    <!-- Instructor section starts  -->
+    <section class="max-w-5xl mx-auto instructor my-16">
+      <h3 class="title text-center md:text-left text-2xl text-headingColor font-semibold">
+        Know Your Instructors
+      </h3>
+      <div class="md:grid grid-cols-5">
+        <p class="col-span-3 pr-4 text-headingColor text-[14px]">
+          Our instructors include some of India’s finest fund managers, head of
+          research, analysts and full-time value investors.
+        </p>
+        <div class="col-span-2">
+          <div class="md:flex flex-row items-center justify-end">
+            <div
+              class="px-4 py-2 border rounded-xl cursor-pointer text-center text-headingColor"
+            >
+              View All >>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- instructor grid starts  -->
+      <div class="grid md:grid-cols-4 lg:grid-cols-5 gap-4 my-4">
+        <div
+          class="instructor-card relative border flex flex-col items-center border-gray-300 rounded-tl-3xl rounded-br-3xl"
+        >
+          <div class="image-wrapper relative">
+            <div
+              style="z-index: -1"
+              class="absolute bottom-0 left-0 bg-primaryColor h-[127px] w-full rounded-tl-3xl"
+            ></div>
+            <img class="h-full w-full z-500" src="../assets/instructor1.png" />
+          </div>
+          <h3
+            class="p-2 mt-2 text-md text-center text-headingColor font-medium"
+          >
+            Aniruddha Sarkar
+          </h3>
+          <h5
+            class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium"
+          >
+            Portfolio Manager, Quest Investments
+          </h5>
+        </div>
+        <div
+          class="instructor-card relative border flex flex-col items-center border-gray-300 rounded-tl-3xl rounded-br-3xl"
+        >
+          <div class="image-wrapper relative">
+            <div
+              style="z-index: -1"
+              class="absolute bottom-0 left-0 bg-primaryColor h-[127px] w-full rounded-tl-3xl"
+            ></div>
+            <img class="h-full w-full z-500" src="../assets/instructor2.png" />
+          </div>
+          <h3
+            class="p-2 mt-2 text-md text-center text-headingColor font-medium"
+          >
+            Sajal Kapor
+          </h3>
+          <h5
+            class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium"
+          >
+            CEO, Quest Investments Limited
+          </h5>
+        </div>
+        <div
+          class="instructor-card relative border flex flex-col items-center border-gray-300 rounded-tl-3xl rounded-br-3xl"
+        >
+          <div class="image-wrapper relative">
+            <div
+              style="z-index: -1"
+              class="absolute bottom-0 left-0 bg-primaryColor h-[127px] w-full rounded-tl-3xl"
+            ></div>
+            <img class="h-full w-full z-500" src="../assets/instructor3.png" />
+          </div>
+          <h3
+            class="p-2 mt-2 text-md text-center text-headingColor font-medium"
+          >
+            Nitin Rao
+          </h3>
+          <h5
+            class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium"
+          >
+            Independent Financial Analyst
+          </h5>
+        </div>
+        <div
+          class="instructor-card relative border flex flex-col items-center border-gray-300 rounded-tl-3xl rounded-br-3xl"
+        >
+          <div class="image-wrapper relative">
+            <div
+              style="z-index: -1"
+              class="absolute bottom-0 left-0 bg-primaryColor h-[127px] w-full rounded-tl-3xl"
+            ></div>
+            <img class="h-full w-full z-500" src="../assets/instructor4.png" />
+          </div>
+          <h3
+            class="p-2 mt-2 text-md text-center text-headingColor font-medium"
+          >
+            Prabhakar Kudva
+          </h3>
+          <h5
+            class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium"
+          >
+            Co-Founder, Samvitti Capital
+          </h5>
+        </div>
+        <div
+          class="instructor-card relative border flex flex-col items-center border-gray-300 rounded-tl-3xl rounded-br-3xl"
+        >
+          <div class="image-wrapper relative">
+            <div
+              style="z-index: -1"
+              class="absolute bottom-0 left-0 bg-primaryColor h-[127px] w-full rounded-tl-3xl"
+            ></div>
+            <img class="h-full w-full z-500" src="../assets/instructor5.png" />
+          </div>
+          <h3
+            class="p-2 mt-2 text-md text-center text-headingColor font-medium"
+          >
+            Tushar Bohra
+          </h3>
+          <h5
+            class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium"
+          >
+            Co-founder & Fund Manager at MK Ventures
+          </h5>
+        </div>
+      </div>
+    </section>
+
+    <!-- Success Stories Starts  -->
+    <section class="success-stories max-w-4xl mx-auto mt-16">
+        <div class="swiper-container my-footer-swiper">
+            <div class="swiper-wrapper">
+              <!-- Slides 1-->
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col md:flex-row items-center">
+                <div class="col-left relative basis-1/4 mr-[10%]">
+                    <img class="w-full rounded-xl border-b-8 border-r-8 border-b-primaryColor border-r-primaryColor mr-4" src="../assets/testimonials.png" alt="Profile Picture">
+                    <img class="absolute left-[40%] bottom-[1%] md:top-[30%] md:left-auto md:right-[-10%] lg:right-[-20%]  w-[100px] h-[100px] bg-white rounded-xl" src="../assets/Picture.png" alt="Profile Picture">
+                </div>
+ 
+                  <div class="col-right basis-3/4 text-center md:text-left">
+                    <h3 class="qoute-heading text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants & instructors</h3>
+                    <p class="qoute-contents text-paragraphColor py-2">The strategic investment playbooks presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
+                    <p class="qouted-by text-sm text-headingColor py-2">Ramanuzan Srinivastab</p>
+                    <p class="designation text-xs text-headingColor py-2">CEO, Albert Heijn Ecommerce</p>
+                  </div>
+                </div>
+              </div>
+              <!-- end of slide 1 -->
+              <!-- Slides 2-->
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col md:flex-row items-center">
+                <div class="col-left relative basis-1/4 mr-[10%]">
+                    <img class="w-full rounded-xl border-b-8 border-r-8 border-b-primaryColor border-r-primaryColor mr-4" src="../assets/testimonials.png" alt="Profile Picture">
+                    <img class="absolute left-[40%] bottom-[1%] md:top-[30%] md:left-auto md:right-[-10%] lg:right-[-20%] w-[100px] h-[100px] bg-white rounded-xl" src="../assets/Picture.png" alt="Profile Picture">
+                </div>
+ 
+                  <div class="col-right basis-3/4 text-center md:text-left">
+                    <h3 class="qoute-heading text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants & instructors</h3>
+                    <p class="qoute-contents text-paragraphColor py-2">The strategic investment playbooks presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
+                    <p class="qouted-by text-sm text-headingColor py-2">Ramanuzan Srinivastab</p>
+                    <p class="designation text-xs text-headingColor py-2">CEO, Albert Heijn Ecommerce</p>
+                  </div>
+                </div>
+              </div>
+              <!-- end of slide 2 -->
+              <!-- Slides 3-->
+              <div class="swiper-slide p-4">
+                <div class="flex flex-col md:flex-row items-center">
+                <div class="col-left relative basis-1/4 mr-[10%]">
+                    <img class="w-full rounded-xl border-b-8 border-r-8 border-b-primaryColor border-r-primaryColor mr-4" src="../assets/Rahat.jpeg" alt="Profile Picture">
+                    <img class="absolute left-[40%] bottom-[1%] md:top-[30%] md:left-auto md:right-[-10%] lg:right-[-20%] w-[100px] h-[100px] bg-white rounded-xl" src="../assets/Picture.png" alt="Profile Picture">
+                </div>
+ 
+                  <div class="col-right basis-3/4 text-center md:text-left">
+                    <h3 class="qoute-heading text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants & instructors</h3>
+                    <p class="qoute-contents text-paragraphColor py-2">The strategic investment playbooks presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
+                    <p class="qouted-by text-sm text-headingColor py-2">Md. Rahat</p>
+                    <p class="designation text-xs text-headingColor py-2">CEO, PNC Soft Tech</p>
+                  </div>
+                </div>
+              </div>
+              <!-- end of slide 3 -->
+         
+            </div>
+            <!-- Add Pagination -->
+            <div class="swiper-pagination"></div>
+            <!-- Add Navigation -->
+            <div class="swiper-button-prev2"></div>
+            <div class="swiper-button-next2"></div>
+          </div>
+    </section>
+<!-- end of success stories  -->
+
+    <footer class="relative footer px-5xl mx-auto pt-4 md:pt-32 md:pb-8 bg-[#2C3051]">
+            <!-- Newsletter Section Starts  -->
+    <!-- <section
+    class="newsletter relative md:absolute md:top-[-100px] md:left-[25%] w-full md:w-[70%] max-w-3xl md:mx-auto bg-white border border-gray-300 rounded-xl px-4 pb-4 my-8 md:z-50"
+  >
+    <h3 class="text-2xl text-center text-headingColor py-2">
+      Stay Up To Date
+    </h3>
+    <p class="text-sm text-paragraphColor text-center px-4 pb-3">
+      Don't miss the latest indianinvestingconclave insights.
+    </p>
+    <div
+      class="email-subscribe flex flex-row items-center justify-center border border-gray-300 rounded-xl px-4 py-2"
+    >
+      <input
+        type="text"
+        class="py-2 md:mr-6 basis-3/5"
+        placeholder="Enter your email address"
+      />
+      <button
+        class="basis-2/5 bg-primaryColor px-2 md:px-10 py-2 rounded-xl hover:opacity-90 transition duration-300 ease-in-out transform scale-10"
+      >
+        Subscribe
+      </button>
+    </div>
+  </section> -->
+  <section class="newsletter relative md:absolute md:top-[-30px] md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-full md:w-[70%] max-w-3xl mx-auto bg-white border border-gray-300 rounded-xl px-4 pb-4 my-8 md:z-50">
+    <h3 class="text-2xl text-center text-headingColor py-2">
+      Stay Up To Date
+    </h3>
+    <p class="text-sm text-paragraphColor text-center px-4 pb-3">
+      Don't miss the latest indianinvestingconclave insights.
+    </p>
+    <div class="email-subscribe flex flex-col md:flex-row items-center justify-center border border-gray-300 rounded-xl px-4 py-2">
+      <input type="text" class="py-2 w-full md:w-auto md:mr-6 mb-2 md:mb-0 basis-3/5" placeholder="Enter your email address">
+      <button class="w-full md:w-auto basis-2/5 bg-primaryColor px-2 md:px-10 py-2 rounded-xl hover:opacity-90 transition duration-300 ease-in-out">
+        Subscribe
+      </button>
+    </div>
+</section>
+
+      <!-- Newsletter Section Ends  -->
+      <div class="flex flex-col items-start md:flex-row md:items-center justify-center px-4 py-2">
+        <div class="col-1 basis-2/5 flex flex-col items-center">
+          <img src="../assets/footer-logo.png" alt="" class="mb-2"/>
+          <p class="text-paragraphColor">
+            No Travel, No Airport Queues - Learn from masters at comfort of your
+            location Get unlimited access to all session recordings and slides !
+          </p>
+        </div>
+        <div class="col-2 basis-1/5 ">
+            <h3 class="text-primaryColor text-xl font-semibold pt-2">About Us</h3>
+            <ul class="mt-2">
+                <li> <i class="fas fa-question-circle text-primaryColor mr-2"></i><a href="#" class="hover:underline text-white">FAQ</a></li>
+                <li><i class="fas fa-lock text-primaryColor mr-2"></i><a href="#" class="hover:underline text-white">Privacy Policy</a></li>
+                <li><i class="fas fa-user-shield text-primaryColor mr-2"></i><a href="/aboutus" class="hover:underline text-white">Terms and conditions</a></li>
+                </ul>
+            </ul>
+        </div>
+        <div class="col-3 basis-1/5 ">
+            <h3 class="text-primaryColor text-xl font-semibold pt-2">Contact Us</h3>
+            <ul class="mt-2">
+                <li> <i class="fas fa-phone text-primaryColor mr-2"></i><a href="#" class="hover:underline text-white">+91 234 5678 9100</a></li>
+                <li><i class="fas fa-envelope text-primaryColor mr-2"></i><a href="#" class="hover:underline text-white">info.iic.com</a></li>
+                <li><i class="fas fa-map-marker-alt text-primaryColor mr-2"></i><a href="/aboutus" class="hover:underline text-white">Location, City</a></li>
+                </ul>
+            
+        </div>
+        <div class="col-4 basis-1/5 ">
+            <h3 class="text-primaryColor text-xl font-semibold pt-2">Follow Us</h3>
+            <ul class="mt-2">
+                <li> <i class="fab fa-facebook-f text-primaryColor mr-2"></i><a href="/facebook.com/rahat.cse5.bu" class="hover:underline text-white">Facebook</a></li>
+                <li><i class="fab fa-twitter text-primaryColor mr-2"></i><a href="#" class="hover:underline text-white">Twitter</a></li>
+                <li><i class="fab fa-linkedin-in text-primaryColor mr-2"></i><a href="/aboutus" class="hover:underline text-white">Linkedin</a></li>
+                </ul>
+        </div>
+      </div>
+      <!-- copyright section starts  -->
+      <div class="footer-copyright flex flex-col-reverse md:flex-row items-center justify-between text-center max-w-5xl mx-auto mb-3 mt-8 text-primaryColor  md:bg-primaryColor md:text-white px-4 md:px-8 lg:px-16 py-3 rounded-3xl">
+        <div>
+            © 2023 indianinvestingconclave Limited. All rights reserved.
+        </div>
+        <div>
+            <img src="../assets/copyright-logo.png" alt="" class="hidden md:block"/>
+        </div>
+      </div>
+      <!-- end of copyright section  -->
+    </footer>
+    <section class="bottom-navigation flex flex-row items-start justify-start py-4 w-fulll max-w--screen-sm mx-auto flex-wrap fixed bottom-0 left-0 overflow-x-auto px-2 py-2 rounded-lg bg-white">
+        <div class="bottom-nav-item py-4 px-2 mt-2 text-center flex flex-col items-center">
+            <i class="fas fa-home"></i>
+            <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Home</a>
+        </div>
+        <div class="bottom-nav-item py-4 px-2 mt-2 text-center flex flex-col items-center">
+            <i class="fas fa-search"></i>
+            <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Search</a>
+        </div>
+        <div class="bottom-nav-item py-4 px-2 mt-2 text-center flex flex-col items-center">
+            <i class="fas fa-users"></i>
+            <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Speakers</a>
+        </div>
+        <div class="bottom-nav-item py-4 px-2 mt-2 text-center flex flex-col items-center">
+            <i class="fas fa-chart-line"></i>
+            <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Stocks</a>
+        </div>
+        <div class="bottom-nav-item py-4 px-2 mt-2 text-center flex flex-col items-center">
+            <i class="fas fa-cog"></i>
+            <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Settings</a>
+        </div>
+
+        <!-- Add similar divs for other navigation items here -->
+    </section>
+    
+    
+    
+    <!-- Include Swiper's JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+   
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    var el = document.querySelector('.tailwind-choices');
+    var choices = new Choices(el, {
+        searchEnabled: true,
+        removeItemButton: true,
+        shouldSort: false,
+    });
+    var searchResults = document.querySelector('.speaker-search-result');
+    // console.log("before"+searchResults);
+el.addEventListener('change', function() {
+    var selectedValues = choices.getValue(true); // Get selected values
+    // console.log("after"+searchResults);
+    // Clear the current content
+    searchResults.innerHTML = '';
+
+    // Iterate over selected values and append new elements
+    selectedValues.forEach(function(value) {
+        var div = document.createElement('div');
+        div.className = 'speaker flex flex-row items-center bg-primaryColor text-center px-4 py-2 rounded-3xl';
+        div.innerHTML = '<img src="../assets/people.png" class="mr-1" alt=""/> <div class="text-sm md:text-md">' + value + '</div>';
+        searchResults.appendChild(div);
+    });
+});
+
+});
+
+//end of filter speaker search
+        //slider for hero
+        // const lowerSlider = document.getElementById('lower');
+        // const upperSlider = document.getElementById('upper');
+
+        // document.getElementById('slider').addEventListener('input', (event) => {
+        //     let lowerVal = parseInt(lowerSlider.value);
+        //     let upperVal = parseInt(upperSlider.value);
+
+        //     if (lowerVal > upperVal) {
+        //         let temp = lowerVal;
+        //         lowerSlider.value = upperVal;
+        //         upperSlider.value = temp;
+        //     }
+        // });
+
+
+                // JavaScript for Modal Functionality
+                const openModal = document.getElementById('search');
+        const closeModal = document.getElementById('closeModal');
+        const modal = document.getElementById('search-filter');
+
+        openModal.addEventListener('click', function(){
+            modal.classList.remove('hidden');
+        });
+
+        closeModal.addEventListener('click', function(){
+            modal.classList.add('hidden');
+        });
+
+        //end of modal 
+      var mySwiper = new Swiper(".mySwiper", {
+        // Optional parameters
+        direction: "horizontal",
+        loop: true,
+        slidesPerView: 1,
+        spaceBetween: 30,
+        autoplay: {
+        delay: 2500, // Autoplay delay in milliseconds
+        disableOnInteraction: false, // When set to false, autoplay will not be disabled after user interactions
+  },
+        // If you need pagination
+        pagination: {
+          el: ".swiper-pagination",
+        },
+
+        // Navigation arrows
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        // And if you need scrollbar
+        scrollbar: {
+          el: ".swiper-scrollbar",
+        },
+      });
+
+    //   footer slider for success stories
+      var mySwiper2 = new Swiper(".my-footer-swiper", {
+    // Optional parameters
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 30,
+//     autoplay: {
+//     delay: 2500, // Autoplay delay in milliseconds
+//     disableOnInteraction: false, // When set to false, autoplay will not be disabled after user interactions
+//   },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next2',
+      prevEl: '.swiper-button-prev2',
+    },
+  });
+
+  // mobile menu handle 
+  const mobileMenuButton = document.querySelector('.mobile-menu-button');
+        const mobileMenu = document.querySelector('.mobile-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+    //  er 
+// dual range slider 
+      window.onload = function(){
+    slideOne();
+    slideTwo();
+}
+let sliderOne = document.getElementById("slider-1");
+let sliderTwo = document.getElementById("slider-2");
+let displayValOne = document.getElementById("range1");
+let displayValTwo = document.getElementById("range2");
+let minGap = 0;
+let sliderTrack = document.querySelector(".slider-track");
+let sliderMaxValue = document.getElementById("slider-1").max;
+function slideOne(){
+    if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
+        sliderOne.value = parseInt(sliderTwo.value) - minGap;
+    }
+    displayValOne.textContent = sliderOne.value;
+    fillColor();
+}
+function slideTwo(){
+    if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
+        sliderTwo.value = parseInt(sliderOne.value) + minGap;
+    }
+    displayValTwo.textContent = sliderTwo.value;
+    fillColor();
+}
+function fillColor(){
+    percent1 = (sliderOne.value / sliderMaxValue) * 100;
+    percent2 = (sliderTwo.value / sliderMaxValue) * 100;
+    sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
+}
+
+// end dual range 
+    </script>
+  </body>
+</html>
