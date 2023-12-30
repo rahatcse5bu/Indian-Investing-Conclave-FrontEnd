@@ -22,6 +22,21 @@
 
 <!-- range input slider  -->
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+
+<!-- Slick Carousel CSS -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+<!-- Slick Carousel Theme CSS (Optional) -->
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+<!-- jQuery (required for Slick Carousel) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Slick Carousel JS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
     <style>
         #search-filter{
             z-index: 999999;
@@ -211,6 +226,10 @@
     }
 }
 
+.slick-prev, .slick-next{
+  color: black !important;
+}
+
     </style>
     <script>
       tailwind.config = {
@@ -232,7 +251,7 @@
       };
     </script>
   </head>
-  <body class="font-poppins px-2 overflow--hidden">
+  <body class=" relative font-poppins px-2 overflow--hidden">
    <!-- Navbar -->
    <nav class="bg-white shadow-lg py-4">
     <div class="max-w-6xl mx-auto px-4">
@@ -908,71 +927,62 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
       </div>
     </section>
 
-    <!-- Success Stories Starts  -->
-    <section class="success-stories max-w-4xl mx-auto mt-16">
-        <div class="swiper-container my-footer-swiper">
-            <div class="swiper-wrapper">
-              <!-- Slides 1-->
-              <div class="swiper-slide p-4">
-                <div class="flex flex-col md:flex-row items-center">
-                <div class="col-left relative basis-1/4 mr-[10%]">
-                    <img class="w-full rounded-xl border-b-8 border-r-8 border-b-primaryColor border-r-primaryColor mr-4" src="assets/testimonials.png" alt="Profile Picture">
-                    <img class="absolute left-[40%] bottom-[1%] md:top-[30%] md:left-auto md:right-[-10%] lg:right-[-20%]  w-[100px] h-[100px] bg-white rounded-xl" src="assets/Picture.png" alt="Profile Picture">
-                </div>
- 
-                  <div class="col-right basis-3/4 text-center md:text-left">
-                    <h3 class="qoute-heading text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants & instructors</h3>
-                    <p class="qoute-contents text-paragraphColor py-2">The strategic investment playbooks presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
-                    <p class="qouted-by text-sm text-headingColor py-2">Ramanuzan Srinivastab</p>
-                    <p class="designation text-xs text-headingColor py-2">CEO, Albert Heijn Ecommerce</p>
+    <section class="success-stories max-w-4xl mx-auto mt-8 mb-8 md:mt-16 md:mb-32">
+      <div class="my-footer-slick">
+          <!-- Slide 1 -->
+          <div class="slick-slide">
+              <div class="flex flex-col md:flex-row items-center">
+                  <div class="col-left relative basis-1/4 mr-[10%]">
+                      <img class="w-full rounded-xl border-b-8 border-r-8 border-b-primaryColor border-r-primaryColor mr-4" src="assets/testimonials.png" alt="Profile Picture">
+                      <img class="absolute left-[40%] bottom-[1%] md:top-[30%] md:left-auto md:right-[-10%] lg:right-[-20%]  w-[100px] h-[100px] bg-white rounded-xl" src="assets/Picture.png" alt="Profile Picture">
                   </div>
-                </div>
-              </div>
-              <!-- end of slide 1 -->
-              <!-- Slides 2-->
-              <div class="swiper-slide p-4">
-                <div class="flex flex-col md:flex-row items-center">
-                <div class="col-left relative basis-1/4 mr-[10%]">
-                    <img class="w-full rounded-xl border-b-8 border-r-8 border-b-primaryColor border-r-primaryColor mr-4" src="assets/testimonials.png" alt="Profile Picture">
-                    <img class="absolute left-[40%] bottom-[1%] md:top-[30%] md:left-auto md:right-[-10%] lg:right-[-20%] w-[100px] h-[100px] bg-white rounded-xl" src="assets/Picture.png" alt="Profile Picture">
-                </div>
- 
                   <div class="col-right basis-3/4 text-center md:text-left">
-                    <h3 class="qoute-heading text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants & instructors</h3>
-                    <p class="qoute-contents text-paragraphColor py-2">The strategic investment playbooks presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
-                    <p class="qouted-by text-sm text-headingColor py-2">Ramanuzan Srinivastab</p>
-                    <p class="designation text-xs text-headingColor py-2">CEO, Albert Heijn Ecommerce</p>
+                      <h3 class="qoute-heading text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants & instructors</h3>
+                      <p class="qoute-contents text-paragraphColor py-2">The strategic investment playbooks presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
+                      <p class="qouted-by text-sm text-headingColor py-2">Ramanuzan Srinivastab</p>
+                      <p class="designation text-xs text-headingColor py-2">CEO, Albert Heijn Ecommerce</p>
                   </div>
-                </div>
               </div>
-              <!-- end of slide 2 -->
-              <!-- Slides 3-->
-              <div class="swiper-slide p-4">
-                <div class="flex flex-col md:flex-row items-center">
-                <div class="col-left relative basis-1/4 mr-[10%]">
-                    <img class="w-full rounded-xl border-b-8 border-r-8 border-b-primaryColor border-r-primaryColor mr-4" src="assets/Rahat.jpeg" alt="Profile Picture">
-                    <img class="absolute left-[40%] bottom-[1%] md:top-[30%] md:left-auto md:right-[-10%] lg:right-[-20%] w-[100px] h-[100px] bg-white rounded-xl" src="assets/Picture.png" alt="Profile Picture">
-                </div>
- 
-                  <div class="col-right basis-3/4 text-center md:text-left">
-                    <h3 class="qoute-heading text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants & instructors</h3>
-                    <p class="qoute-contents text-paragraphColor py-2">The strategic investment playbooks presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
-                    <p class="qouted-by text-sm text-headingColor py-2">Md. Rahat</p>
-                    <p class="designation text-xs text-headingColor py-2">CEO, PNC Soft Tech</p>
-                  </div>
-                </div>
-              </div>
-              <!-- end of slide 3 -->
-         
-            </div>
-            <!-- Add Pagination -->
-            <div class="swiper-pagination"></div>
-            <!-- Add Navigation -->
-            <div class="swiper-button-prev2"></div>
-            <div class="swiper-button-next2"></div>
           </div>
-    </section>
-<!-- end of success stories  -->
+  
+          <!-- Slide 2 -->
+          <div class="slick-slide">
+              <div class="flex flex-col md:flex-row items-center">
+                  <div class="col-left relative basis-1/4 mr-[10%]">
+                      <img class="w-full rounded-xl border-b-8 border-r-8 border-b-primaryColor border-r-primaryColor mr-4" src="assets/testimonials.png" alt="Profile Picture">
+                      <img class="absolute left-[40%] bottom-[1%] md:top-[30%] md:left-auto md:right-[-10%] lg:right-[-20%] w-[100px] h-[100px] bg-white rounded-xl" src="assets/Picture.png" alt="Profile Picture">
+                  </div>
+                  <div class="col-right basis-3/4 text-center md:text-left">
+                      <h3 class="qoute-heading text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants & instructors</h3>
+                      <p class="qoute-contents text-paragraphColor py-2">The strategic investment playbooks presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
+                      <p class="qouted-by text-sm text-headingColor py-2">Ramanuzan Srinivastab</p>
+                      <p class="designation text-xs text-headingColor py-2">CEO, Albert Heijn Ecommerce</p>
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Slide 3 -->
+          <div class="slick-slide">
+              <div class="flex flex-col md:flex-row items-center">
+                  <div class="col-left relative basis-1/4 mr-[10%]">
+                      <img class="w-full rounded-xl border-b-8 border-r-8 border-b-primaryColor border-r-primaryColor mr-4" src="assets/Rahat.jpeg" alt="Profile Picture">
+                      <img class="absolute left-[40%] bottom-[1%] md:top-[30%] md:left-auto md:right-[-10%] lg:right-[-20%] w-[100px] h-[100px] bg-white rounded-xl" src="assets/Picture.png" alt="Profile Picture">
+                  </div>
+                  <div class="col-right basis-3/4 text-center md:text-left">
+                      <h3 class="qoute-heading text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants & instructors</h3>
+                      <p class="qoute-contents text-paragraphColor py-2">The strategic investment playbooks presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
+                      <p class="qouted-by text-sm text-headingColor py-2">Md. Rahat</p>
+                      <p class="designation text-xs text-headingColor py-2">CEO, PNC Soft Tech</p>
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Add more slides as needed -->
+      </div>
+          <!-- Previous and Next Buttons -->
+    <button class="slick-prev">Previous</button>
+    <button class="slick-next">Next</button>
+  </section>
 
     <footer class="relative footer px-5xl mx-auto pt-4 md:pt-32 md:pb-8 bg-[#2C3051]">
             <!-- Newsletter Section Starts  -->
@@ -1062,7 +1072,7 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
       </div>
       <!-- end of copyright section  -->
     </footer>
-    <section class="bottom-navigation flex flex-row items-start justify-start py-4 w-fulll max-w--screen-sm mx-auto flex-wrap fixed bottom-0 left-0 overflow-x-auto px-2 py-2 rounded-lg bg-white">
+    <section class="bottom-navigation flex flex-row items-start justify-start py-4 w-fulll max-w--screen-sm mx-auto flex-wrap sticky bottom-0 left-0 overflow-x-auto px-2 py-2 rounded-lg bg-white">
         <div class="bottom-nav-item py-4 px-2 mt-2 text-center flex flex-col items-center">
             <i class="fas fa-home"></i>
             <a href="#" class="text-sm text-gray-700 underline hover:no-underline">Home</a>
@@ -1179,24 +1189,24 @@ el.addEventListener('change', function() {
       });
 
     //   footer slider for success stories
-      var mySwiper2 = new Swiper(".my-footer-swiper", {
-    // Optional parameters
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 30,
-//     autoplay: {
-//     delay: 2500, // Autoplay delay in milliseconds
-//     disableOnInteraction: false, // When set to false, autoplay will not be disabled after user interactions
-//   },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next2',
-      prevEl: '.swiper-button-prev2',
-    },
-  });
+//       var mySwiper2 = new Swiper(".my-footer-swiper", {
+//     // Optional parameters
+//     loop: true,
+//     slidesPerView: 1,
+//     spaceBetween: 30,
+// //     autoplay: {
+// //     delay: 2500, // Autoplay delay in milliseconds
+// //     disableOnInteraction: false, // When set to false, autoplay will not be disabled after user interactions
+// //   },
+//     pagination: {
+//       el: '.swiper-pagination',
+//       clickable: true,
+//     },
+//     navigation: {
+//       nextEl: '.swiper-button-next2',
+//       prevEl: '.swiper-button-prev2',
+//     },
+//   });
 
   // mobile menu handle 
   const mobileMenuButton = document.querySelector('.mobile-menu-button');
@@ -1240,6 +1250,18 @@ function fillColor(){
 }
 
 // end dual range 
+
+$(document).ready(function(){
+        $('.my-footer-slick').slick({
+            slidesToShow: 1, // Number of visible slides
+            slidesToScroll: 1, // Number of slides to scroll
+            autoplay: true, // Auto-play slides
+            autoplaySpeed: 3000, // Auto-play speed in milliseconds (optional)
+            prevArrow: $('.slick-prev'), // Use the classes of the buttons as selectors
+            nextArrow: $('.slick-next'), // Use the classes of the buttons as selectors
+            // Add more configuration options as needed
+        });
+    });
     </script>
   </body>
 </html>
