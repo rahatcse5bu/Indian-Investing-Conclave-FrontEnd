@@ -74,7 +74,7 @@
             </div>
             <!-- search header section  -->
                         <!-- Hamburger Menu -->
-                        <div class="md:hidden order-3 md:order-3 flex items-center">
+                        <div class="md:hidden order-3 md:order-3 flex items-center z-100">
                             <button class="outline-none mobile-menu-button">
                                 <svg class="w-6 h-6 text-gray-700 hover:text-primaryColor" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path d="M4 6h16M4 12h16m-7 6h7"></path>
@@ -119,7 +119,7 @@
 </ul>
 </div>
 <!-- Filter Section Starts  -->
-<div id="search-filter" class="filter-section hidden absolute top-[3%] left-20% inset-0 bg-opacity--50 overflow-y-auto  max-w-6xl mx-auto my-4 py-4 px-6 bg-white border border-gray-300 rounded-xl z-50">
+<div id="search-filter" class="filter-section hidden absolute top-0 md:top-[0%] left-20% inset-0 bg-opacity--50 overflow-y-auto  max-w-6xl mx-auto my-4 py-4 px-6 bg-white border border-gray-300 rounded-xl z-50">
     <!-- Close button starts  -->
     <div id="closeModal" class="absolute top-0 right-[4px] p-2 cursor-pointer text-white bg-red-700 border border-red-700 rounded-full flex items-center justify-center hover:bg-red-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500" role="button" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -415,7 +415,7 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
     <section class="max-w-5xl mx-auto best-contents my-16">
       <h3 class="title text-center md:text-left text-2xl text-headingColor font-semibold">Best Contents Of Ours</h3>
       <div class="md:grid grid-cols-5">
-        <p class="col-span-3 md:pr-4 text-center text-headingColor py-1 text-[14px]">
+        <p class="col-span-3 md:pr-4 text-center md:text-left text-headingColor py-1 text-[14px]">
           Explore our exclusive video series offering in-depth market analysis,
           expert interviews, and timely updates on investment trends
         </p>
@@ -606,7 +606,7 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
         Know Your Instructors
       </h3>
       <div class="md:grid grid-cols-5">
-        <p class="col-span-3 md:pr-4 text-center text-headingColor py-1 text-[14px]">
+        <p class="col-span-3 md:pr-4 text-center md:text-left text-headingColor py-1 text-[14px]">
           Our instructors include some of India’s finest fund managers, head of
           research, analysts and full-time value investors.
         </p>
@@ -730,33 +730,67 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
       </div>
     </section>
 
-   
+
+
+    <section class="success-stories max-w-4xl mx-auto mt-8 mb-8 md:mt-16 md:mb-32">
+      <div class="my-footer-slick">
+          <!-- Slide 1 -->
+          <div class="slick-slide">
+              <div class="flex flex-col md:flex-row items-center">
+                  <div class="col-left relative basis-1/4 mr-[10%]">
+                      <img class="w-full rounded-xl border-b-8 border-r-8 border-b-primaryColor border-r-primaryColor mr-4" src="assets/testimonials.png" alt="Profile Picture">
+                      <img class="absolute left-[40%] bottom-[1%] md:top-[30%] md:left-auto md:right-[-10%] lg:right-[-20%]  w-[100px] h-[100px] bg-white rounded-xl" src="assets/Picture.png" alt="Profile Picture">
+                  </div>
+                  <div class="col-right basis-3/4 text-center md:text-left">
+                      <h3 class="qoute-heading text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants & instructors</h3>
+                      <p class="qoute-contents text-paragraphColor py-2">The strategic investment playbooks presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
+                      <p class="qouted-by text-sm text-headingColor py-2">Ramanuzan Srinivastab</p>
+                      <p class="designation text-xs text-headingColor py-2">CEO, Albert Heijn Ecommerce</p>
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Slide 2 -->
+          <div class="slick-slide">
+              <div class="flex flex-col md:flex-row items-center">
+                  <div class="col-left relative basis-1/4 mr-[10%]">
+                      <img class="w-full rounded-xl border-b-8 border-r-8 border-b-primaryColor border-r-primaryColor mr-4" src="assets/testimonials.png" alt="Profile Picture">
+                      <img class="absolute left-[40%] bottom-[1%] md:top-[30%] md:left-auto md:right-[-10%] lg:right-[-20%] w-[100px] h-[100px] bg-white rounded-xl" src="assets/Picture.png" alt="Profile Picture">
+                  </div>
+                  <div class="col-right basis-3/4 text-center md:text-left">
+                      <h3 class="qoute-heading text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants & instructors</h3>
+                      <p class="qoute-contents text-paragraphColor py-2">The strategic investment playbooks presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
+                      <p class="qouted-by text-sm text-headingColor py-2">Ramanuzan Srinivastab</p>
+                      <p class="designation text-xs text-headingColor py-2">CEO, Albert Heijn Ecommerce</p>
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Slide 3 -->
+          <div class="slick-slide">
+              <div class="flex flex-col md:flex-row items-center">
+                  <div class="col-left relative basis-1/4 mr-[10%]">
+                      <img class="w-full rounded-xl border-b-8 border-r-8 border-b-primaryColor border-r-primaryColor mr-4" src="assets/Rahat.jpeg" alt="Profile Picture">
+                      <img class="absolute left-[40%] bottom-[1%] md:top-[30%] md:left-auto md:right-[-10%] lg:right-[-20%] w-[100px] h-[100px] bg-white rounded-xl" src="assets/Picture.png" alt="Profile Picture">
+                  </div>
+                  <div class="col-right basis-3/4 text-center md:text-left">
+                      <h3 class="qoute-heading text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants & instructors</h3>
+                      <p class="qoute-contents text-paragraphColor py-2">The strategic investment playbooks presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
+                      <p class="qouted-by text-sm text-headingColor py-2">Md. Rahat</p>
+                      <p class="designation text-xs text-headingColor py-2">CEO, PNC Soft Tech</p>
+                  </div>
+              </div>
+          </div>
+  
+          <!-- Add more slides as needed -->
+      </div>
+          <!-- Previous and Next Buttons -->
+    <button class="slick-prev">Previous</button>
+    <button class="slick-next">Next</button>
+  </section>
+  
     <footer class="relative footer px-8 md:px-5xl mx-auto pt-4 md:pt-32 md:pb-8 bg-[#2C3051]">
-            <!-- Newsletter Section Starts  -->
-    <!-- <section
-    class="newsletter relative md:absolute md:top-[-100px] md:left-[25%] w-full md:w-[70%] max-w-3xl md:mx-auto bg-white border border-gray-300 rounded-xl px-4 pb-4 my-8 md:z-50"
-  >
-    <h3 class="text-2xl text-center text-headingColor py-2">
-      Stay Up To Date
-    </h3>
-    <p class="text-sm text-paragraphColor text-center px-4 pb-3">
-      Don't miss the latest indianinvestingconclave insights.
-    </p>
-    <div
-      class="email-subscribe flex flex-row items-center justify-center border border-gray-300 rounded-xl px-4 py-2"
-    >
-      <input
-        type="text"
-        class="py-2 md:mr-6 basis-3/5"
-        placeholder="Enter your email address"
-      />
-      <button
-        class="basis-2/5 bg-primaryColor px-2 md:px-10 py-2 rounded-xl hover:opacity-90 transition duration-300 ease-in-out transform scale-10"
-      >
-        Subscribe
-      </button>
-    </div>
-  </section> -->
+
   <section class="newsletter relative md:absolute md:top-[-30px] md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-full md:w-[70%] max-w-3xl mx-auto bg-white border border-gray-300 rounded-xl px-4 pb-4 my-8 md:z-50">
     <h3 class="text-2xl text-center text-headingColor py-2">
       Stay Up To Date
@@ -785,7 +819,7 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
         </div>
         <div class="col-2 basis-1/5 ">
             <h3 class="text-primaryColor text-xl text-center md:text-left font-semibold pt-2">About Us</h3>
-            <ul class="mt-2 flex flex-col items-center">
+            <ul class="mt-2 flex flex-col items-center md:items-start">
                 <li> <i class="fas fa-question-circle text-primaryColor mr-2"></i><a href="#" class="hover:underline text-white">FAQ</a></li>
                 <li><i class="fas fa-lock text-primaryColor mr-2"></i><a href="#" class="hover:underline text-white">Privacy Policy</a></li>
                 <li><i class="fas fa-user-shield text-primaryColor mr-2"></i><a href="/aboutus" class="hover:underline text-white">Terms and conditions</a></li>
@@ -794,7 +828,7 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
         </div>
         <div class="col-3 basis-1/5 ">
             <h3 class="text-primaryColor text-xl text-center md:text-left font-semibold pt-2">Contact Us</h3>
-            <ul class="mt-2 flex flex-col items-center">
+            <ul class="mt-2 flex flex-col items-center md:items-start">
                 <li> <i class="fas fa-phone text-primaryColor mr-2"></i><a href="#" class="hover:underline text-white">+91 234 5678 9100</a></li>
                 <li><i class="fas fa-envelope text-primaryColor mr-2"></i><a href="#" class="hover:underline text-white">info.iic.com</a></li>
                 <li><i class="fas fa-map-marker-alt text-primaryColor mr-2"></i><a href="/aboutus" class="hover:underline text-white">Location, City</a></li>
@@ -803,7 +837,7 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
         </div>
         <div class="col-4 basis-1/5 ">
             <h3 class="text-primaryColor text-xl text-center md:text-left font-semibold pt-2">Follow Us</h3>
-            <ul class="mt-2 flex flex-col items-center">
+            <ul class="mt-2 flex flex-col items-center md:items-start">
                 <li> <i class="fab fa-facebook-f text-primaryColor mr-2"></i><a href="/facebook.com/rahat.cse5.bu" class="hover:underline text-white">Facebook</a></li>
                 <li><i class="fab fa-twitter text-primaryColor mr-2"></i><a href="#" class="hover:underline text-white">Twitter</a></li>
                 <li><i class="fab fa-linkedin-in text-primaryColor mr-2"></i><a href="/aboutus" class="hover:underline text-white">Linkedin</a></li>
@@ -848,17 +882,11 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
     </div>
             <!-- Add similar divs for other navigation items here -->
         </section>
-
-    
-    
-    
     <!-- Include Swiper's JS -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 
    
     <script>
-
-
         //end of modal 
   //     var mySwiper = new Swiper(".mySwiper", {
   //       // Optional parameters
@@ -886,81 +914,6 @@ class="sslide-2 flex flex-col md:flex-row items-end justify-between pt-16 pb-8 p
   //         el: ".swiper-scrollbar",
   //       },
   //     });
-
-    //   footer slider for success stories
-//       var mySwiper2 = new Swiper(".my-footer-swiper", {
-//     // Optional parameters
-//     loop: true,
-//     slidesPerView: 1,
-//     spaceBetween: 30,
-// //     autoplay: {
-// //     delay: 2500, // Autoplay delay in milliseconds
-// //     disableOnInteraction: false, // When set to false, autoplay will not be disabled after user interactions
-// //   },
-//     pagination: {
-//       el: '.swiper-pagination',
-//       clickable: true,
-//     },
-//     navigation: {
-//       nextEl: '.swiper-button-next2',
-//       prevEl: '.swiper-button-prev2',
-//     },
-//   });
-
-  // mobile menu handle 
-  // const mobileMenuButton = document.querySelector('.mobile-menu-button');
-  //       const mobileMenu = document.querySelector('.mobile-menu');
-
-  //       mobileMenuButton.addEventListener('click', () => {
-  //           mobileMenu.classList.toggle('hidden');
-  //       });
-
-    //  er 
-// // dual range slider 
-//       window.onload = function(){
-//     slideOne();
-//     slideTwo();
-// }
-// let sliderOne = document.getElementById("slider-1");
-// let sliderTwo = document.getElementById("slider-2");
-// let displayValOne = document.getElementById("range1");
-// let displayValTwo = document.getElementById("range2");
-// let minGap = 0;
-// let sliderTrack = document.querySelector(".slider-track");
-// let sliderMaxValue = document.getElementById("slider-1").max;
-// function slideOne(){
-//     if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
-//         sliderOne.value = parseInt(sliderTwo.value) - minGap;
-//     }
-//     displayValOne.textContent = sliderOne.value;
-//     fillColor();
-// }
-// function slideTwo(){
-//     if(parseInt(sliderTwo.value) - parseInt(sliderOne.value) <= minGap){
-//         sliderTwo.value = parseInt(sliderOne.value) + minGap;
-//     }
-//     displayValTwo.textContent = sliderTwo.value;
-//     fillColor();
-// }
-// function fillColor(){
-//     percent1 = (sliderOne.value / sliderMaxValue) * 100;
-//     percent2 = (sliderTwo.value / sliderMaxValue) * 100;
-//     sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
-// }
-
-// // end dual range 
-
-// $(document).ready(function(){
-//         $('.my-footer-slick').slick({
-//             slidesToShow: 1, // Number of visible slides
-//             slidesToScroll: 1, // Number of slides to scroll
-//             autoplay: true, // Auto-play slides
-//             autoplaySpeed: 3000, // Auto-play speed in milliseconds (optional)
-//             prevArrow: $('.slick-prev'), // Use the classes of the buttons as selectors
-//             nextArrow: $('.slick-next'), // Use the classes of the buttons as selectors
-//             // Add more configuration options as needed
-//         });
-//     });
     </script>
     <script src="js/hero-slider.js"></script>
     <script src="js/speaker-select-choice.js"></script>
