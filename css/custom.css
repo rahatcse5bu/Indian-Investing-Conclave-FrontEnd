@@ -1,5 +1,5 @@
 .instructor-custom-background {
-    /* background-image: url('../assets/instructor-bg-top-right.png'), url('../assets/instructor-bg-bottom-left.png');
+    /* background-image: url('../assets/home/instructor-bg-top-right.png'), url('../assets/home/instructor-bg-bottom-left.png');
     background-position: top right, bottom left;
     background-repeat: no-repeat, no-repeat;
     background-size: 35% 35%; */
@@ -8,7 +8,7 @@
   }
 .best-content-custom-background {
     position: relative;
-    /* background-image: url('../assets/top-right-bg.png'), url('../assets/bottom-left-bg.png');
+    /* background-image: url('../assets/home/top-right-bg.png'), url('../assets/home/bottom-left-bg.png');
     background-position: top right, bottom left;
     background-repeat: no-repeat, no-repeat;
     background-size: 35% 35%; */
@@ -29,12 +29,12 @@
   }
 
   .instructor-custom-background::before {
-    background-image: url('../assets/instructor-bg-top-right.png');
+    background-image: url('../assets/home/instructor-bg-top-right.png');
     background-position: top right;
   }
 
   .instructor-custom-background::after {
-    background-image: url('../assets/instructor-bg-bottom-left.png');
+    background-image: url('../assets/home/instructor-bg-bottom-left.png');
     background-position: bottom left;
   }
 
@@ -52,11 +52,11 @@
   }
 
   .best-content-custom-background::before {
-    background-image: url('../assets/top-right-bg.png');
+    background-image: url('../assets/home/top-right-bg.png');
     background-position: top right;
   }
 
   .best-content-custom-background::after {
-    background-image: url('../assets/bottom-left-bg.png');
+    background-image: url('../assets/home/bottom-left-bg.png');
     background-position: bottom left;
   }
