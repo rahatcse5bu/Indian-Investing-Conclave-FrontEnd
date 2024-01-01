@@ -5,8 +5,9 @@ $(document).ready(function(){
             slidesToScroll: 1, // Number of slides to scroll
             autoplay: true, // Auto-play slides
             autoplaySpeed: 3000, // Auto-play speed in milliseconds (optional)
-            prevArrow: $('.slick-prev'), // Use the classes of the buttons as selectors
-            nextArrow: $('.slick-next'), // Use the classes of the buttons as selectors
+            prevArrow: '<button class="slick-prev" aria-label="Previous" type="button">Previous</button>',
+            nextArrow: '<button class="slick-next" aria-label="Next" type="button">Next</button>',
+            dots: true,
             // Add more configuration options as needed
         });
     });

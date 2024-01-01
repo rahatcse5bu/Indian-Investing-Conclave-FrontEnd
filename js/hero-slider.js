@@ -1,26 +1,26 @@
-var mySwiper = new Swiper(".mySwiper", {
-    // Optional parameters
-    direction: "horizontal",
-    loop: true,
-    slidesPerView: 1,
-    spaceBetween: 30,
-    autoplay: {
-    delay: 2500, // Autoplay delay in milliseconds
-    disableOnInteraction: false, // When set to false, autoplay will not be disabled after user interactions
-},
-    // If you need pagination
-    pagination: {
-      el: ".swiper-pagination",
-    },
-
-    // Navigation arrows
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-
-    // And if you need scrollbar
-    scrollbar: {
-      el: ".swiper-scrollbar",
-    },
+$(document).ready(function () {
+    $('#slick-hero-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: true,
+      centerMode: true, 
+    //   centerPadding: '50px',
+    //   autoplay: true,
+    //   variableWidth: true,
+      dots: true,
+      prevArrow: '<button type="button" class="slick-prev">Previous</button>',
+      nextArrow: '<button type="button" class="slick-next">Next</button>',
+      responsive: [
+        {
+            breakpoint: 768,
+            settings: {
+                centerMode: false, // Disable center mode for larger screens
+                // centerPadding: '10px',
+                slidesToShow: 1, // Show 3 slides for larger screens
+                slidesToScroll: 1,
+            }
+        }
+    ]
+      // Add other settings as needed
+    });
   });

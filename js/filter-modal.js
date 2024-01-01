@@ -1,9 +1,13 @@
                 // JavaScript for Modal Functionality
-                const openModal = document.getElementById('search');
+                const openModalDesktop = document.getElementById('search');
+                const openModal = document.getElementById('btm-nav-search');
         const closeModal = document.getElementById('closeModal');
         const modal = document.getElementById('search-filter');
 
         openModal.addEventListener('click', function(){
+            modal.classList.remove('hidden');
+        });
+        openModalDesktop.addEventListener('click', function(){
             modal.classList.remove('hidden');
         });
 
