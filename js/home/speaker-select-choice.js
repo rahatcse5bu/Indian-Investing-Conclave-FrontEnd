@@ -20,7 +20,7 @@ el.addEventListener('change', function() {
     selectedValues.forEach(function(value) {
         var div = document.createElement('div');
         div.className = 'speaker flex flex-row items-center justify-center bg-primaryColor text-center px-2 py-2 rounded-3xl';
-        div.innerHTML = '<img src="assets/people.png" class="mr-1" alt=""/> <div class="text-sm md:text-md">' + value + '</div>';
+        div.innerHTML = '<img src="../../assets/home/people.png" class="mr-1" alt=""/> <div class="text-xs md:text-md">' + value + '</div>';
         searchResults.appendChild(div);
     });
 });

@@ -3,7 +3,7 @@ $(document).ready(function(){
         slidesToShow: 1, // Show 3 slides at a time
         slidesToScroll: 1,
         centerMode: true, // Enable center mode
-        // centerPadding: '10px',
+        centerPadding: '100px',
         variableWidth: false, // Disable variable width
         prevArrow: '<button class="slick-prev" aria-label="Previous" type="button">Previous</button>',
         nextArrow: '<button class="slick-next" aria-label="Next" type="button">Next</button>',

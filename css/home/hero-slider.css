@@ -44,4 +44,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
-  
+  .slick-dots {
+	bottom: -34px !important;
+
+}

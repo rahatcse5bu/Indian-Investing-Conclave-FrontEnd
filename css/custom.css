@@ -1,3 +1,8 @@
+.border-b-half {
+    border-bottom-width: 50%;
+}
+
+
 .instructor-custom-background {
     /* background-image: url('../assets/home/instructor-bg-top-right.png'), url('../assets/home/instructor-bg-bottom-left.png');
     background-position: top right, bottom left;
@@ -31,11 +36,13 @@
   .instructor-custom-background::before {
     background-image: url('../assets/home/instructor-bg-top-right.png');
     background-position: top right;
+    background-size: 54%;
   }
 
   .instructor-custom-background::after {
     background-image: url('../assets/home/instructor-bg-bottom-left.png');
     background-position: bottom left;
+    background-size: 18%;
   }
 
    
@@ -54,9 +61,11 @@
   .best-content-custom-background::before {
     background-image: url('../assets/home/top-right-bg.png');
     background-position: top right;
+    background-size: 16%;
   }
 
   .best-content-custom-background::after {
     background-image: url('../assets/home/bottom-left-bg.png');
     background-position: bottom left;
+    background-size: 16%;
   }
