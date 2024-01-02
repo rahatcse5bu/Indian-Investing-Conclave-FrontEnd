@@ -22,3 +22,38 @@ $(document).ready(function(){
         ]
     });
 });
+
+
+// $(document).ready(function() {
+    
+//     function getHeight(){
+//         let height =0;
+//         $('.instructor-card').each(function() {
+//             height = $(this).outerHeight();
+//             console.log(height); // Height of each .instructor-card
+//         }); 
+//         return height;
+    
+//     }
+//     function updateSlider() {
+//     //   const cardHeight = $('#mobile-slick-slider .instructor-card').outerHeight();
+//       const cardHeight = getHeight();
+//       console.log('card height: '+cardHeight)
+//       const deviceWidth = $(window).width();
+//       const slideWidth = Math.abs(deviceWidth - (cardHeight / 2));
+//       console.log('slide width: ' + slideWidth);
+//       $('#mobile-slick-slider .slick-slide.slick-current.slick-active.slick-center').css('width', slideWidth + 'px');
+//       $('#mobile-slick-slider').slick('slickSetOption', 'centerPadding', (cardHeight / 4) + 'px', true);
+//     }
+
+//     $('#mobile-slick-slider').slick({
+//       centerMode: true,
+//       centerPadding: '0px',
+//       slidesToShow: 1,
+//       variableWidth: true
+//     });
+
+//     updateSlider();
+  
+//     $(window).resize(updateSlider);
+//   });
