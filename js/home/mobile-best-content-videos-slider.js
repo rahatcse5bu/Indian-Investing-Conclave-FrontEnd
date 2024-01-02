@@ -4,6 +4,7 @@ $(document).ready(function(){
         slidesToScroll: 1,
         centerMode: true, // Enable center mode
         centerPadding: '100px',
+        autoplay:true,
         variableWidth: false, // Disable variable width
         prevArrow: '<button class="slick-prev" aria-label="Previous" type="button">Previous</button>',
         nextArrow: '<button class="slick-next" aria-label="Next" type="button">Next</button>',
