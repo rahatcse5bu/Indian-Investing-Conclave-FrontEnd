@@ -9,10 +9,10 @@
     white-space: nowrap;
 }
 
-.label-15min { left: 5%; }
+.label-15min { left: 10%; }
 .label-30min { left: 33%; }
 .label-45min { left: 66%; }
-.label-above45min { left: 90%; }
+.label-above45min { left: 87%; }
 .thumb {
     height: 20px;
     width: 20px;
@@ -28,7 +28,7 @@
 
 .wrapper{
 position: relative;
-width: 95vmin;
+/* width: 95vmin; */
 background-color: #ffffff;
 padding: 10px 20px 20px 10px;
 border-radius: 10px;

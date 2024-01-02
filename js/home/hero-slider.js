@@ -4,7 +4,7 @@ $(document).ready(function () {
       slidesToScroll: 1,
       arrows: true,
       centerMode: true, 
-      centerPadding: '180px',
+      centerPadding: '70px',
     //   autoplay: true,
     //   variableWidth: true,
       dots: true,
