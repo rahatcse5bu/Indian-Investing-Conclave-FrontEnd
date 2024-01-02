@@ -12,7 +12,7 @@ $(document).ready(function(){
                 breakpoint: 768,
                 settings: {
                     centerMode: true, // Disable center mode for larger screens
-                    // centerPadding: '10px',
+                    centerPadding: '60px',
                     slidesToShow: 1, // Show 3 slides for larger screens
                     slidesToScroll: 1,
                 }
