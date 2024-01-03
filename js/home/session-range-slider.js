@@ -4,7 +4,7 @@ const maxVal = parseInt(slider.max, 10);
 
 function updateSlider() {
     const val = (slider.value - minVal) / (maxVal - minVal);
-    slider.style.background = `linear-gradient(to right, #FFD700 0%, #FFD700 ${val * 100}%, #ddd ${val * 100}%, #ddd 100%)`;
+    slider.style.background = `linear-gradient(to right, #FFC226 0%, #FFC226 ${val * 100}%, #ddd ${val * 100}%, #ddd 100%)`;
 }
 
 slider.addEventListener('input', updateSlider);

@@ -30,7 +30,7 @@ function fillColor(){
     percent1 = ((sliderOne.value - sliderMinValue) / (sliderMaxValue - sliderMinValue)) * 100;
     percent2 = ((sliderTwo.value - sliderMinValue) / (sliderMaxValue - sliderMinValue)) * 100;
     
-    sliderTrack.style.background = `linear-gradient(to right, #dadae5 ${percent1}% , #3264fe ${percent1}% , #3264fe ${percent2}%, #dadae5 ${percent2}%)`;
+    sliderTrack.style.background = `linear-gradient(to right, #ddd ${percent1}% , #FFC226 ${percent1}% , #FFC226 ${percent2}%, #ddd ${percent2}%)`;
 }
 
 // end dual range 

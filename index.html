@@ -61,7 +61,7 @@
 <body class="relative bg-primaryBG  overflow-x-hidden font-poppins px--3">
   <!-- Navbar -->
   <nav
-    class="w-full px-2 bg-custom-gradient md:bg-custom-white max-w-custom-xl md:px-12 lg:px-24 mx-auto px-0 md:px-4 shadow-lg md:py-4">
+    class="w-full h-[85px] text-[19px] text-headingColor font-medium font-poppins px-2 bg-custom-gradient md:bg-custom-white max-w-custom-xl md:px-12 lg:px-18 mx-auto px-0 md:px-4 shadow-lg md:py--4">
     <div class="max-w--custom-xl md:px--12 lg:px--24 mx--auto px--4">
       <div class="flex justify-between items-center">
         <!-- Logo -->
@@ -72,7 +72,9 @@
 
         <!-- Primary Navbar items -->
         <div class="hidden md:order-2 md:inline-flex items-start lg:gap-11 main-menu">
-          <a href="#" class="py-4 px-2 text-primaryColor border-b-half border-b-4 border-primaryColor font-semibold">Home</a>
+          <a href="#" class="relative py-4 px-2 text-primaryColor font-semibold">Home
+            <span class="absolute left-1/2 transform -translate-x-1/2 bottom-0 w-[25px] h-[5px] bg-primaryColor"></span>
+          </a>
           <a href="#"
             class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300">Stock</a>
           <a href="#"
@@ -91,7 +93,7 @@
           </button>
         </div>
 
-        <div class="search hidden md:block order--2 md:order-3 lg:w-[20%]" id="search">
+        <div class="search hidden md:block order--2 md:order-3 lg:w-[30%]" id="search">
           <div
             class="search-inner relative flex flex-row items-center py-[10px] md:pr-8 lg:pr-32 md:pl-[10px] md:w-full lg:w-full rounded-xl border border-primaryColor">
             <img alt="src-icon" src="assets/home/search-icon.png" class="" />
@@ -202,20 +204,20 @@
         <div class="market-cap-wrapper border border-gray-300 rounded-xl py-2 mt-4">
           <div class="w-full flex flex-row items-center justify-start px-2 py-1 ">
             <img class="bg-primaryColor px-2 py-2 rounded-md mr-4" src="assets/home/rupee-symbol.png" alt="" />
-            <h3>Market Cap</h3>
+            <h3 class="text-base font-normal tracking-wide text-[15px] text-[#2C3051]">Market Cap</h3>
           </div>
           <!-- Market Cap tab  starts -->
           <div class="market-cap-tab grid grid-cols-3 gap-4 my-2">
             <div
-              class="text-sm md:text-md market-cap cursor-pointer active:bg-primaryColor text-center px-4 py-2 rounded-3xl">
+              class="text-sm md:text-md market-cap cursor-pointer active:bg-primaryColor text-center px-2 md:px-4 py-2 rounded-3xl">
               <div>Small Cap</div>
             </div>
             <div
-              class="text-sm md:text-md market-cap cursor-pointer bg-primaryColor active:bg-primaryColor text-center px-4 py-2 rounded-3xl">
+              class="text-sm md:text-md market-cap cursor-pointer bg-primaryColor active:bg-primaryColor text-center px-2 md:px-4 py-2 rounded-3xl">
               <div>Mid Cap</div>
             </div>
             <div
-              class=" text-sm md:text-md market-cap cursor-pointer active:bg-primaryColor text-center px-4 py-2 rounded-3xl">
+              class="text-sm md:text-md market-cap cursor-pointer active:bg-primaryColor text-center px-2 md:px-4 py-2 rounded-3xl">
               <div>Large Cap</div>
             </div>
           </div>
@@ -230,16 +232,16 @@
         <div class="session-duration border border-gray-300 rounded-3xl py-4">
           <div class="w-full flex flex-row items-center justify-start px-2 py-1 ">
             <img class="bg-primaryColor px-2 py-2 rounded-md mr-4" src="assets/home/session-duration.png" alt="" />
-            <h3>Session Duration</h3>
+            <h3 class="text-base font-normal tracking-wide text-[15px] text-[#2C3051]">Session Duration</h3>
           </div>
           <div class="w-full">
-            <div class="slider-container">
+            <div class="slider-container flex flex-row justify-center items-center">
               <span class="text-sm md:text-md slider-label label-15min">15 min</span>
               <span class="text-sm md:text-md  slider-label label-30min">30 min</span>
               <span class="text-sm md:text-md slider-label label-45min">45 min</span>
               <span class="text-xs md:text-md slider-label label-above45min">Above 45 min</span>
-              <input id="session-slider" type="range" min="15" max="46" value="15"
-                class="session-slider w-full h-2 bg-primaryColor rounded-lg appearance-none cursor-pointer">
+              <input id="session-slider" type="range" min="15" max="46" value="25"
+                class="session-slider w-[96%] mt-2 mx-auto h-[6px] bg-primaryColor rounded-lg appearance-none cursor-pointer">
             </div>
           </div>
         </div>
@@ -248,11 +250,11 @@
         <div class="time-release border border-gray-300 rounded-3xl py-4 mt-8">
           <div class="w-full flex flex-row items-center justify-start px-2 py-1 ">
             <img class="bg-primaryColor px-2 py-2 rounded-md mr-4" src="assets/home/time-release.png" alt="" />
-            <h3>Time Of Release</h3>
+            <h3 class="text-base font-normal tracking-wide text-[15px] text-[#2C3051]">Time Of Release</h3>
           </div>
           <div class="dual-range-sider wrapper">
 
-            <div class="container">
+            <div class="time-range-slider-container mx-auto">
               <!-- slider labels  -->
               <div class="dual-range-slider-labels mb-4">
                 <div class="text-xs md:text-md 2000 absolute top-2  left-0">
@@ -286,12 +288,12 @@
               <input type="range" min="2000" max="2035" value="2023" id="slider-2" oninput="slideTwo()">
             </div>
 
-            <div class="dual-range-label valuesf flex flex-row items-center justify-center">
-              <span id="range1" class="px-4 md:px-8 py-2 md:py-4 mr-4 bg-primaryColor rounded-xl ">
+            <div class="dual-range-label valuesf flex flex-row items-center justify-center md:justify-start">
+              <span id="range1" class="px-4 md:px-8 py-2 md:py-4 mr-4 border border-[#2C3051] bg--primaryColor rounded-2xl ">
                 2000
               </span>
               <span> &dash; </span>
-              <span id="range2" class="px-4 md:px-8 py-2 md:py-4 ml-4 bg-primaryColor rounded-xl ">
+              <span id="range2" class="px-4 md:px-8 py-2 md:py-4 ml-4 border border-[#2C3051] bg--primaryColor rounded-2xl ">
                 2035
               </span>
             </div>
@@ -325,23 +327,23 @@
           class="sslide-2 flex flex-col md:flex-row md:items-end justify-between pt-16 pb-8 px-3 md:px-8">
           <div
             class="left-col bg-[#C1C1C1] bg-opacity-[90%] px-8 py-4 mb-4 rounded-2xl w-full md:w-[470px] md:h--[385px]">
-            <p class="text-headingColor md:text-[34px] font-semibold">Learn from masters at the comfort of your location
+            <p class="text-headingColor md:text-[34px] font-extrabold">Learn from masters at the comfort of your location
             </p>
-            <p class="">Get unlimited access to all session recordings and slides!</p>
+            <p class="text-[16px] font-medium tracking-[5.5%]">Get unlimited access to all session recordings and slides!</p>
             <div class="flex flex-col md:flex-row items-center justify-center my-4">
-              <button class="bg-primaryColor px-8 py-4 mr-0 md:mr-4 mb-4 md:mb-0 rounded-xl"><i
+              <button class="bg-primaryColor font-semibold text-[14px] px-8 py-4 mr-0 md:mr-4 mb-4 md:mb-0 rounded-xl"><i
                   class="fas fa-clock"></i> Watch Now</button>
-              <button class="border border-headingColor px-8 py-4 rounded-xl"><i class="fas fa-gift"></i> Gift
+              <button class="border border-headingColor font-semibold text-[14px] px-8 py-4 rounded-xl"><i class="fas fa-gift"></i> Gift
                 Event</button>
             </div>
           </div>
           <div
             class="col-right bg-white border-b-8 border-l-8 border-b-primaryColor border-l-primaryColor rounded-2xl p-8">
             <div class="flex flex-row items-center justify-start mb-4">
-              <i class="fas fa-hourglass mr-4"></i><span class="font-semibold">IIC+ at ₹ 490/month</span>
+              <i class="fas fa-hourglass mr-4"></i><span class="font-bold text-[22px]">IIC+ at ₹ 490/month</span>
             </div>
             <div class="flex flex-row items-center justify-start">
-              <i class="fas fa-stopwatch mr-4"></i> Get access to 200+ Sessions
+              <i class="fas fa-stopwatch mr-4 text-[19px]"></i> Get access to 200+ Sessions
             </div>
           </div>
         </div>
@@ -414,14 +416,14 @@
   </div>
   <!-- End of hero slider -->
   <!-- Best content Section starts  -->
-  <section class="best-content-custom-background best-content-wrapper relative py-2 md:py-8">
+  <section class="bg--[#2C3051] best-content-custom-background best-content-wrapper relative py-2 md:py-8">
     <!-- <img class="hidden md:block absolute bottom-0 left-0  w-[200px] " src="assets/home/bottom-left-bg.png" alt=""/>
   <img class="hidden md:block absolute top-0 right-0 w-[200px]" src="assets/home/top-right-bg.png" alt=""/> -->
 
     <div class="max-w-custom-xl px-4 md:px-12 lg:px-24 mx-auto hidden md:block best-contents my-16">
       <h3 class="title text-center md:text-left text-[20px] md:text-[25px] lg:text-[30px] text-headingColor font-semibold">Best Contents Of Ours</h3>
       <div class="md:grid grid-cols-5">
-        <p class="col-span-3 md:pr-4 text-center md:text-left text-headingColor py-1 text-[14px]">
+        <p class="col-span-3 md:pr-4 text-center font-light md:text-left text-headingColor py-1 text-[17px]">
           Explore our exclusive video series offering in-depth market analysis,
           expert interviews, and timely updates on investment trends
         </p>
@@ -451,13 +453,13 @@
            <!-- upper section ends  -->
         <!-- bottom section starts  -->
 <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center font-[17px] font-normal">What Makes the Good Platform Business for the betterment of the
   </h3>
   <div class="flex flex-row items-center justify-start px-2 pb-2">
     <div class="mr-2">
       <img src="assets/home/people.png" />
     </div>
-    <div class="">Digant Hara</div>
+    <div class="text-sm font-normal text-paragraphColor">Digant Hara</div>
   </div>
 </div>
 <!-- end of bottom section  -->
@@ -478,13 +480,13 @@
            <!-- upper section ends  -->
         <!-- bottom section starts  -->
 <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center font-[17px] font-normal">What Makes the Good Platform Business for the betterment of the
   </h3>
   <div class="flex flex-row items-center justify-start px-2 pb-2">
     <div class="mr-2">
       <img src="assets/home/people.png" />
     </div>
-    <div class="">Digant Hara</div>
+    <div class="text-sm font-normal text-paragraphColor">Digant Hara</div>
   </div>
 </div>
 <!-- end of bottom section  -->
@@ -505,13 +507,13 @@
            <!-- upper section ends  -->
         <!-- bottom section starts  -->
 <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center font-[17px] font-normal">What Makes the Good Platform Business for the betterment of the
   </h3>
   <div class="flex flex-row items-center justify-start px-2 pb-2">
     <div class="mr-2">
       <img src="assets/home/people.png" />
     </div>
-    <div class="">Digant Hara</div>
+    <div class="text-sm font-normal text-paragraphColor">Digant Hara</div>
   </div>
 </div>
 <!-- end of bottom section  -->
@@ -532,13 +534,13 @@
            <!-- upper section ends  -->
         <!-- bottom section starts  -->
 <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center font-[17px] font-normal">What Makes the Good Platform Business for the betterment of the
   </h3>
   <div class="flex flex-row items-center justify-start px-2 pb-2">
     <div class="mr-2">
       <img src="assets/home/people.png" />
     </div>
-    <div class="">Digant Hara</div>
+    <div class="text-sm font-normal">Digant Hara</div>
   </div>
 </div>
 <!-- end of bottom section  -->
@@ -559,13 +561,13 @@
            <!-- upper section ends  -->
         <!-- bottom section starts  -->
 <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center font-[17px] font-normal">What Makes the Good Platform Business for the betterment of the
   </h3>
   <div class="flex flex-row items-center justify-start px-2 pb-2">
     <div class="mr-2">
       <img src="assets/home/people.png" />
     </div>
-    <div class="">Digant Hara</div>
+    <div class="text-sm font-normal text-paragraphColor">Digant Hara</div>
   </div>
 </div>
 <!-- end of bottom section  -->
@@ -586,13 +588,13 @@
            <!-- upper section ends  -->
         <!-- bottom section starts  -->
 <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center font-[17px] font-normal">What Makes the Good Platform Business for the betterment of the
   </h3>
   <div class="flex flex-row items-center justify-start px-2 pb-2">
     <div class="mr-2">
       <img src="assets/home/people.png" />
     </div>
-    <div class="">Digant Hara</div>
+    <div class="text-sm font-normal text-paragraphColor">Digant Hara</div>
   </div>
 </div>
 <!-- end of bottom section  -->
@@ -613,13 +615,13 @@
            <!-- upper section ends  -->
         <!-- bottom section starts  -->
 <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center font-[17px] font-normal">What Makes the Good Platform Business for the betterment of the
   </h3>
   <div class="flex flex-row items-center justify-start px-2 pb-2">
     <div class="mr-2">
       <img src="assets/home/people.png" />
     </div>
-    <div class="">Digant Hara</div>
+    <div class="text-sm font-normal text-paragraphColor">Digant Hara</div>
   </div>
 </div>
 <!-- end of bottom section  -->
@@ -640,13 +642,13 @@
            <!-- upper section ends  -->
         <!-- bottom section starts  -->
 <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+  <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center font-[17px] font-normal">What Makes the Good Platform Business for the betterment of the
   </h3>
   <div class="flex flex-row items-center justify-start px-2 pb-2">
     <div class="mr-2">
       <img src="assets/home/people.png" />
     </div>
-    <div class="">Digant Hara</div>
+    <div class="text-sm font-normal text-paragraphColor">Digant Hara</div>
   </div>
 </div>
 <!-- end of bottom section  -->
@@ -657,12 +659,12 @@
     </div>
   </section>
   <!-- best content slider for mobile  -->
-  <section class="block md:hidden max-w-5xl mx-auto mobile-best-contents md:my-16">
+  <section class="bg--[#2C3051] block md:hidden max-w-5xl mx-auto mobile-best-contents md:my-16">
 
-    <div class="flex flex-row items-center justify-between px-2 md:hidden">
+    <div class="flex flex-row items-center justify-between px-2 py-2 md:hidden">
       <h3 class="title text-left text-headingColor font-semibold">Best Contents Of Ours</h3>
           <div
-            class="py-2 mb-2 my-4 cursor-pointer z-[100] text-right text-headingColor">
+            class=" cursor-pointer z-[100] text-right text-headingColor">
             View All >>
           </div>
   
@@ -686,7 +688,7 @@
              <!-- upper section ends  -->
           <!-- bottom section starts  -->
   <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-    <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+    <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-normal">What Makes the Good Platform Business for the betterment of the
     </h3>
     <div class="flex flex-row items-center justify-start px-2 pb-2">
       <div class="mr-2">
@@ -719,13 +721,13 @@
              <!-- upper section ends  -->
           <!-- bottom section starts  -->
   <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-    <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+    <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-normal">What Makes the Good Platform Business for the betterment of the
     </h3>
     <div class="flex flex-row items-center justify-start px-2 pb-2">
       <div class="mr-2">
         <img src="assets/home/people.png" />
       </div>
-      <div class="">Digant Hara</div>
+      <div class="text-sm font-normal">Digant Hara</div>
     </div>
   </div>
   <!-- end of bottom section  -->
@@ -749,13 +751,13 @@
              <!-- upper section ends  -->
           <!-- bottom section starts  -->
   <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-    <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+    <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center font-normal">What Makes the Good Platform Business for the betterment of the
     </h3>
     <div class="flex flex-row items-center justify-start px-2 pb-2">
       <div class="mr-2">
         <img src="assets/home/people.png" />
       </div>
-      <div class="">Digant Hara</div>
+      <div class="text-sm font-normal">Digant Hara</div>
     </div>
   </div>
   <!-- end of bottom section  -->
@@ -782,7 +784,7 @@
              <!-- upper section ends  -->
           <!-- bottom section starts  -->
   <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-    <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+    <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center font-normal">What Makes the Good Platform Business for the betterment of the
     </h3>
     <div class="flex flex-row items-center justify-start px-2 pb-2">
       <div class="mr-2">
@@ -812,13 +814,13 @@
              <!-- upper section ends  -->
           <!-- bottom section starts  -->
   <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-    <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+    <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center font-normal">What Makes the Good Platform Business for the betterment of the
     </h3>
     <div class="flex flex-row items-center justify-start px-2 pb-2">
       <div class="mr-2">
         <img src="assets/home/people.png" />
       </div>
-      <div class="">Digant Hara</div>
+      <div class="text-sm font-normal">Digant Hara</div>
     </div>
   </div>
   <!-- end of bottom section  -->
@@ -845,13 +847,13 @@
              <!-- upper section ends  -->
           <!-- bottom section starts  -->
   <div class="bottom-section flex flex-col items-center justify-center border-b border-l border-r border-t-0 border-gray-300 rounded-tl-0 rounded-tr-0 rounded-bl-xl rounded-br-xl ">
-    <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center  font-medium">What Makes the Good Platform Business for the betterment of the
+    <h3 class="px-2 pb-2 pt-0 mt-1 text-sm md:text-md text-center font-normal">What Makes the Good Platform Business for the betterment of the
     </h3>
     <div class="flex flex-row items-center justify-start px-2 pb-2">
       <div class="mr-2">
         <img src="assets/home/people.png" />
       </div>
-      <div class="">Digant Hara</div>
+      <div class="text-sm font-normal">Digant Hara</div>
     </div>
   </div>
   <!-- end of bottom section  -->
@@ -864,7 +866,7 @@
       <!-- Add more Slick Slides as needed -->
     </div>
   </section>
-  <!-- end of best content slider for mobile  -->
+  <!-- end of best content slider for Mobile  -->
 
 
 
@@ -876,8 +878,8 @@
       <h3 class="title text-center md:text-left text-[20px] md:text-[25px] lg:text-[30px] text-headingColor font-semibold">
         Know Your Instructors
       </h3>
-      <div class="md:grid grid-cols-5">
-        <p class="col-span-3 md:pr-4 text-center md:text-left text-headingColor py-1 text-[14px]">
+      <div class="md:grid md:grid-cols-5">
+        <p class="col-span-3 md:pr-4 text-center md:text-left text-headingColor py-1 text-lg font-light">
           Our instructors include some of India’s finest fund managers, head of
           research, analysts and full-time value investors.
         </p>
@@ -901,7 +903,7 @@
           <h3 class="p-2 mt-2 text-md text-center text-headingColor font-medium">
             Aniruddha Sarkar
           </h3>
-          <h5 class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium">
+          <h5 class="px-2 pb-3 text-sm font-normal text-center text-paragraphColor font-medium">
             Portfolio Manager, Quest Investments
           </h5>
         </div>
@@ -916,7 +918,7 @@
           <h3 class="p-2 mt-2 text-md text-center text-headingColor font-medium">
             Milon Mahmud
           </h3>
-          <h5 class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium">
+          <h5 class="px-2 pb-3 text-sm font-normal text-center text-paragraphColor font-medium">
             Project Manager, PNC Soft Tech
           </h5>
         </div>     
@@ -931,7 +933,7 @@
           <h3 class="p-2 mt-2 text-md text-center text-headingColor font-medium">
             Md. Rahat
           </h3>
-          <h5 class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium">
+          <h5 class="px-2 pb-3 text-sm font-normal text-center text-paragraphColor font-medium">
             Portfolio Manager, Quest Investments
           </h5>
         </div>
@@ -946,7 +948,7 @@
           <h3 class="p-2 mt-2 text-md text-center text-headingColor font-medium">
            Facebook Mahmud
           </h3>
-          <h5 class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium">
+          <h5 class="px-2 pb-3 text-sm font-normal text-center text-paragraphColor font-medium">
             Quality Assurance Manager, Facebook
           </h5>
         </div>
@@ -961,7 +963,7 @@
           <h3 class="p-2 mt-2 text-md text-center text-headingColor font-medium">
             Anirban Paul
           </h3>
-          <h5 class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium">
+          <h5 class="px-2 pb-3 text-sm font-normal text-center text-paragraphColor font-medium">
             Portfolio Manager, Quest Investments
           </h5>
         </div>
@@ -972,10 +974,10 @@
   <!-- Instructors Section ends  -->
   <!-- Instructors Slider for Mobile -->
   <section class="max-w-custom-xl md:px-12 lg:px-24 mx-auto mobile-instructor md:hidden md:my-16">
-    <div class="flex flex-row items-center justify-between px-2 md:hidden">
+    <div class="flex flex-row items-center justify-between px-2 py-2 md:hidden">
       <h3 class="title text-left text-headingColor font-semibold">Know Your Instructors</h3>
           <div
-            class="py-2 mb-2 my-4 cursor-pointer z-[100] text-right text-headingColor">
+            class="cursor-pointer z-[56] text-right text-headingColor">
             View All >>
           </div>
   
@@ -996,7 +998,7 @@
           <h3 class="p-2 mt-2 text-md text-center text-headingColor font-medium">
             Anirban Paul
           </h3>
-          <h5 class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium">
+          <h5 class="px-2 pb-3 text-sm font-normal text-center text-paragraphColor font-medium">
             Portfolio Manager, Quest Investments
           </h5>
         </div>
@@ -1016,7 +1018,7 @@
           <h3 class="p-2 mt-2 text-md text-center text-headingColor font-medium">
             Razin KRK
           </h3>
-          <h5 class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium">
+          <h5 class="px-2 pb-3 text-sm font-normal text-center text-paragraphColor font-medium">
             Project Manager, BU CSE5th
           </h5>
         </div>
@@ -1036,7 +1038,7 @@
           <h3 class="p-2 mt-2 text-md text-center text-headingColor font-medium">
             Tushar Paul
           </h3>
-          <h5 class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium">
+          <h5 class="px-2 pb-3 text-sm font-normal text-center text-paragraphColor font-medium">
             QA Manager, Quest Investments
           </h5>
         </div>
@@ -1056,7 +1058,7 @@
           <h3 class="p-2 mt-2 text-md text-center text-headingColor font-medium">
             Sushanto Shah
           </h3>
-          <h5 class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium">
+          <h5 class="px-2 pb-3 text-sm font-normal text-center text-paragraphColor font-medium">
             Executive Engr, Facebook Inc
           </h5>
         </div>
@@ -1076,7 +1078,7 @@
           <h3 class="p-2 mt-2 text-md text-center text-headingColor font-medium">
             Anirban Shikdar
           </h3>
-          <h5 class="px-2 pb-3 text-sm text-center text-paragraphColor font-medium">
+          <h5 class="px-2 pb-3 text-sm font-normal text-center text-paragraphColor font-medium">
             Portfolio Manager, Indian Investments
           </h5>
         </div>
@@ -1088,7 +1090,7 @@
   </section>
   <!-- End of Instructors Slider for Mobile -->
 
-  <section class="success-stories-wrapper bg-[#FFF9E9] mb-4 md:pt-[39px] md:pb-[40px]">
+  <section class="success-stories-wrapper bg-[#FFF9E9] border-t border-t-primaryColor mb--4 md:pt-[39px] md:pb-[60px]">
     <div class="success-stories max-w-custom-xl px-4 md:px-12 lg:px-24 mx-auto mt-8 mb-8  md:mb-24">
       <div class="my-footer-slick">
         <!-- Slide 1 -->
@@ -1104,15 +1106,13 @@
             <div class="col-right basis-3/4 text-center md:text-left">
               <h3 class="qoute-heading text-md md:text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants
                 & instructors</h3>
-              <p class="qoute-contents text-sm md:tex-md text-paragraphColor py-2">
-                <!-- <span class="text-2xl md:text-4xl text-primaryColor px-1">‘’</span> -->
+              <blockquote  class="qoute-contents blockquote-custom text-sm font-normal leading-[210%] md:tex-md text-paragraphColor py-2">
                 The strategic investment playbooks
                 presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through
                 market trends, risk management strategies, and actionable tips. Highly recommended!.
-                <!-- <span class="text-2xl md:text-4xl text-primaryColor px-1">‘’</span> -->
-              </p>
-              <p class="qouted-by text-sm text-headingColor py-2">Ramanuzan Srinivastab</p>
-              <p class="designation text-xs text-headingColor py-2">CEO, Albert Heijn Ecommerce</p>
+              </blockquote >
+              <p class="qouted-by text-sm font-semibold md:text-[25px] text-headingColor py-2">Ramanuzan Srinivastab</p>
+              <p class="designation text-xs md:text-[16px] text-headingColor py-2">CEO, Albert Heijn Ecommerce</p>
             </div>
           </div>
         </div>
@@ -1130,11 +1130,11 @@
             <div class="col-right basis-3/4 text-center md:text-left">
               <h3 class="qoute-heading text-md md:text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants
                 & instructors</h3>
-              <p class="qoute-contents text-sm md:tex-md text-paragraphColor py-2">The strategic investment playbooks
+                <blockquote  class="qoute-contents blockquote-custom font-normal leading-[210%] text-sm md:tex-md text-paragraphColor py-2">The strategic investment playbooks
                 presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through
-                market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
-              <p class="qouted-by text-sm text-headingColor py-2">Ramanuzan Srinivastab</p>
-              <p class="designation text-xs text-headingColor py-2">CEO, Albert Heijn Ecommerce</p>
+                market trends, risk management strategies, and actionable tips. Highly recommended!.</blockquote>
+              <p class="qouted-by text-sm font-semibold md:text-[25px] text-headingColor py-2">Ramanuzan Srinivastab</p>
+              <p class="designation text-xs md:text-[16px] text-headingColor py-2">CEO, Albert Heijn Ecommerce</p>
             </div>
           </div>
         </div>
@@ -1152,11 +1152,11 @@
             <div class="col-right basis-3/4 text-center md:text-left">
               <h3 class="qoute-heading text-md md:text-2xl text-primaryColor py-2">Success Stories FROM OUR Participants
                 & instructors</h3>
-              <p class="qoute-contents text-sm md:tex-md text-paragraphColor py-2">The strategic investment playbooks
+                <blockquote  class="qoute-contents blockquote-custom font-normal leading-[210%] text-sm md:tex-md text-paragraphColor py-2">The strategic investment playbooks
                 presented through slide decks are a true gem. Each deck is a well-crafted guide, taking you through
-                market trends, risk management strategies, and actionable tips. Highly recommended!.</p>
-              <p class="qouted-by text-sm text-headingColor py-2">Md. Rahat</p>
-              <p class="designation text-xs text-headingColor py-2">CEO, PNC Soft Tech</p>
+                market trends, risk management strategies, and actionable tips. Highly recommended!.</blockquote>
+              <p class="qouted-by text-sm font-semibold md:text-[25px] text-headingColor py-2">Md. Rahat</p>
+              <p class="designation text-xs md:text-[16px] text-headingColor py-2">CEO, PNC Soft Tech</p>
             </div>
           </div>
         </div>
@@ -1169,12 +1169,12 @@
     </div>
   </section>
 
-  <!-- footer starts here  -->
-  <footer class="hidden md:block relative footer mt-12 px-2 lg:px-12  mx-auto pt-4 md:pt-32 md:pb-8 bg-[#2C3051]">
+  <!-- desktop footer starts here  -->
+  <footer class="hidden md:block relative footer mt--12 px-2 lg:px-12  mx-auto pt-4 md:pt-32 md:pb-8 bg-[#2C3051]">
 
     <div class="inner-footer max-w-custom-xl px-1 md:px-2 lg:px-4 mx-auto">
       <section
-        class="newsletter relative flex flex-col items-center md:absolute md:top-[-30px] md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-full md:w-[80%] max-w-custom-xl mx-auto bg-white border border-gray-300 rounded-xl px-4 md:py-8 pb-4 my-8 md:z-50">
+        class="newsletter relative flex flex-col items-center md:absolute md:top-[-30px] md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-full md:w-[80%] max-w-custom-xl mx-auto bg-white border border-gray-300 rounded-xl px-4 md:py-8 pb-4 my-8 md:z-[10]">
         <h3 class="text-2xl text-center text-headingColor py-2">
           Stay Up To Date
         </h3>
@@ -1182,7 +1182,7 @@
           Don't miss the latest indianinvestingconclave insights.
         </p>
         <div
-          class="email-subscribe flex flex-col md:flex-row items-center justify-center border border-gray-300 rounded-xl px-4 py-2 w-[90%]">
+          class="email-subscribe flex flex-col md:flex-row items-center justify-center border border-gray-300 rounded-xl px-4 py-2 w-[90%] md:w-[68%] lg:w-[48%]">
           <input type="text" class="py-2 w-full md:w-auto md:mr-6 mb-2 md:mb-0 basis-3/5"
             placeholder="Enter your email address">
           <button
@@ -1198,12 +1198,12 @@
       <div class="flex flex-col items-start md:flex-row md:items-center justify-between px--4 py-2">
         <div class="col-1 w-auto md:w-[40%] lg:w-auto flex flex-col items-center md:items-start">
           <img src="assets/LOGO_transp.png" alt="" class="mb-2 h-[60px] w-[60px]" />
-          <p class="text-paragraphColor md:w-[95%] leading-[33px]">
+          <p class="md:w-[95%] text-white text-lg font-normal leading-loose tracking-[0.129px]">
             No Travel, No Airport Queues - Learn from<br> masters at comfort of your
             location<br> Get unlimited access to all session recordings<br> and slides !
           </p>
         </div>
-        <div class="col-2">
+        <div class="col-2 text-lg font-normal leading-6 tracking-[0.129px]">
           <h3 class="text-primaryColor text-xl text-center md:text-left font-semibold pt-2">About Us</h3>
           <ul class="mt-2 flex flex-col items-center md:items-start">
             <li> <i class="fas fa-question-circle text-primaryColor mr-2"></i><a href="#"
@@ -1215,7 +1215,7 @@
           </ul>
           </ul>
         </div>
-        <div class="col-3">
+        <div class="col-3 text-lg font-normal leading-6 tracking-[0.129px]">
           <h3 class="text-primaryColor text-xl text-center md:text-left font-semibold pt-2">Contact Us</h3>
           <ul class="mt-2 flex flex-col items-center md:items-start">
             <li> <i class="fas fa-phone text-primaryColor mr-2"></i><a href="#" class="hover:underline text-white text-sm">+91
@@ -1227,7 +1227,7 @@
           </ul>
 
         </div>
-        <div class="col-4 ">
+        <div class="col-4 text-lg font-normal leading-6 tracking-[0.129px]">
           <h3 class="text-primaryColor text-xl text-center md:text-left  font-semibold pt-2">Follow Us</h3>
           <ul class="mt-2 flex flex-col items-center md:items-start">
             <li> <i class="fab fa-facebook-f text-primaryColor mr-2"></i><a href="/facebook.com/rahat.cse5.bu"
@@ -1241,7 +1241,7 @@
       </div>
       <!-- copyright section starts  -->
       <div
-        class="max-w-custom-xl px-2 md:px-8 lg:px-12 mx-auto footer-copyright flex flex-col-reverse md:flex-row items-center justify-between text-center max-w-5xl mx-auto mb-[85px] md:mb-3 md:mt-8 text-primaryColor  md:bg-primaryColor md:text-white px-4 md:px-8 lg:px-16 py-3 rounded-3xl">
+        class="max-w-custom-xl px-2 md:px-8 lg:px-12 mx-auto footer-copyright flex flex-col-reverse md:flex-row items-center justify-between text-center mx-auto mb-[85px] md:mb-3 md:mt-8 text-primaryColor  md:bg-primaryColor md:text-white text-lg font-normal leading-loose-2 tracking-[0.129px] px-4 md:px-8 lg:px-16 py-3 rounded-3xl">
         <div>
           © 2023 indianinvestingconclave Limited. All rights reserved.
         </div>
@@ -1253,17 +1253,17 @@
     </div>
   </footer>
 
-  <!-- alt footer  for mobile only-->
-    <!-- footer starts here  -->
+  <!--  footer  for mobile only-->
+    <!-- mobile footer starts here  -->
     <footer class="block md:hidden relative footer mt-12 px-2 lg:px-12  mx-auto pt-4 md:pt-32 md:pb-8 bg-[#2C3051]">
 
       <div class="inner-footer max-w-custom-xl px-1 md:px-2 lg:px-4 mx-auto">
         <section
           class="newsletter relative flex flex-col items-center md:absolute md:top-[-30px] md:left-1/2 md:-translate-x-1/2 md:-translate-y-1/2 w-full md:w-[80%] max-w-custom-xl mx-auto bg-white border border-gray-300 rounded-xl px-4 md:py-8 pb-4 my-8 md:z-50">
-          <h3 class="text-2xl text-center text-headingColor py-2">
+          <h3 class="text-[25px] font-semibold leading-[31px] tracking-[0.258px] text-center text-headingColor py-2">
             Stay Up To Date
           </h3>
-          <p class="text-sm text-paragraphColor text-center px-4 pb-3">
+          <p class="text-center text-xs font-normal leading-[23.217px] tracking-[0.129px] text-paragraphColor text-center px-4 pb-3">
             Don't miss the latest indianinvestingconclave insights.
           </p>
           <div
@@ -1271,7 +1271,7 @@
             <input type="text" class="py-2 w-full md:w-auto md:mr-6 mb-2 md:mb-0 basis-3/5"
               placeholder="Enter your email address">
             <button
-              class="w-full md:w-auto basis-2/5 bg-primaryColor px-2 md:px-10 py-2 rounded-xl hover:opacity-90 transition duration-300 ease-in-out">
+              class="w-full md:w-auto basis-2/5 bg-primaryColor text-center text-sm font-semibold leading-none px-2 md:px-10 py-2 rounded-xl hover:opacity-90 transition duration-300 ease-in-out">
               Subscribe
             </button>
           </div>
@@ -1290,7 +1290,7 @@
           </div>
           <div class="col-2 w-full text-primaryColor ">
             <div class="flex flex-row items-center justify-between cursor-pointer toggle">
-            <h3 class="text-primaryColor text-md text-center md:text-left font-semibold pt-2">About Us</h3>
+            <h3 class="text-primaryColor  text-center md:text-left text-[23px] font-semibold leading-[31px] tracking-[0.258px] pt-2">About Us</h3>
             <i class="fas fa-caret-down"></i>
             </div>
             <ul class="mt-2 flex flex-col items-start hidden">
@@ -1305,7 +1305,7 @@
           </div>
           <div class="col-3 w-full text-primaryColor ">
             <div class="flex flex-row items-center justify-between cursor-pointer toggle">
-            <h3 class="text-primaryColor text-md text-center md:text-left font-semibold pt-2">Contact Us</h3>
+            <h3 class="text-primaryColor text-center md:text-left text-[23px] font-semibold leading-[31px] tracking-[0.258px] pt-2">Contact Us</h3>
             <i class="fas fa-caret-down"></i>
             </div>
             <ul class="mt-2 flex flex-col items-start hidden">
@@ -1320,7 +1320,7 @@
           </div>
           <div class="col-4 w-full text-primaryColor">
             <div class="flex flex-row items-center justify-between cursor-pointer toggle">
-              <h3 class="text-primaryColor text-md text-center md:text-left font-semibold pt-2">Follow Us</h3>
+              <h3 class="text-primaryColor text-center md:text-left text-[23px] font-semibold leading-[31px] tracking-[0.258px] pt-2">Follow Us</h3>
               <i class="fas fa-caret-down"></i>
             </div>
             <ul class="mt-2 flex flex-col items-start hidden">
