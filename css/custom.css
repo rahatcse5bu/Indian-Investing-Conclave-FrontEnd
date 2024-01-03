@@ -37,6 +37,7 @@ font-smooth: never !important;
     background-repeat: no-repeat;
     /* background-size: 50%; Adjust size as needed */
     opacity: 0.45; /* Adjust opacity as needed */
+    z-index: -1;
   }
 
   .instructor-custom-background::before {
@@ -62,6 +63,7 @@ font-smooth: never !important;
     background-repeat: no-repeat;
     /* background-size: 50%; Adjust size as needed */
     opacity: 0.45; /* Adjust opacity as needed */
+    z-index: -1;
   }
 
   .best-content-custom-background::before {
