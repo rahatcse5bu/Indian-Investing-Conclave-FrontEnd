@@ -80,14 +80,24 @@ font-smooth: never !important;
 
   @media (max-width: 600px) {
     #instructor-slick-slider .slick-slide {
-        width: 150px !important;
+        width: 220px !important;
     }
       #mobile-slick-slider .slick-slide {
-        width: 200px !important;
+        width: 250px !important;
     }
 
   }
-  @media (max-width: 768px) {
+  @media (max-width: 448px) {
+    #instructor-slick-slider .slick-slide {
+        width: 190px !important;
+    }
+      #mobile-slick-slider .slick-slide {
+        width: 220px !important;
+    }
+
+  }
+
+  /* @media (max-width: 768px) {
     #instructor-slick-slider .slick-slide {
         width: 190px !important;
     }
@@ -95,7 +105,7 @@ font-smooth: never !important;
         width: 200px !important;
     }
 
-  }
+  } */
 
 
 /* .blockquote-custom::before {

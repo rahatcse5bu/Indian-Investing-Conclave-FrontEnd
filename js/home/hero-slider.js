@@ -5,7 +5,7 @@ $(document).ready(function () {
       arrows: true,
       centerMode: true, 
       centerPadding: '70px',
-    //   autoplay: true,
+      autoplay: true,
     //   variableWidth: true,
       dots: true,
       prevArrow: '<button type="button" class="slick-prev">Previous</button>',
