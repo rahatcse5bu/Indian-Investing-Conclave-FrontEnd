@@ -76,13 +76,25 @@ font-smooth: never !important;
     background-size: 16%;
   }
 
+  @media (max-width: 600px) {
+    #instructor-slick-slider .slick-slide {
+        width: 150px !important;
+    }
+      #mobile-slick-slider .slick-slide {
+        width: 200px !important;
+    }
 
-  #instructor-slick-slider .slick-slide {
-    width: 150px !important;
-}
-  #mobile-slick-slider .slick-slide {
-    width: 200px !important;
-}
+  }
+  @media (max-width: 768px) {
+    #instructor-slick-slider .slick-slide {
+        width: 190px !important;
+    }
+      #mobile-slick-slider .slick-slide {
+        width: 200px !important;
+    }
+
+  }
+
 
 /* .blockquote-custom::before {
     content: open-quote;

@@ -17,7 +17,7 @@ $(document).ready(function(){
                     autoplay:false,
                     variableWidth: true,
                     slidesToShow: 1, // Show 3 slides for larger screens
-                    slidesToScroll: 2,
+                    slidesToScroll: 1,
                 }
             }
         ]
