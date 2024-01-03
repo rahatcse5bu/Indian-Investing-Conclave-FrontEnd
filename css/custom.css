@@ -113,7 +113,7 @@ font-smooth: never !important;
         width: 150px !important;
     }
       #mobile-slick-slider .slick-slide {
-        width: 200px !important;
+        width: 220px !important;
     }
 
   }
@@ -142,4 +142,29 @@ font-smooth: never !important;
 
 .blockquote-custom::after {
     content: "”"; /* Curvy closing quote */
+}
+
+
+
+
+.swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+
+/* Additional styling for centered slide */
+.swiper-slide-active {
+    opacity: 1;
+    width: 48% !important;
+}
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    box-sizing: border-box;
+     width: 60% !important; 
+    /* Adjust the width for partial visibility  */
+ 
 }
