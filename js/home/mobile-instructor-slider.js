@@ -1,8 +1,8 @@
 $(document).ready(function(){
     $('#instructor-slick-slider').slick({
         slidesToShow: 1, // Show 1 slide at a time
-        // slidesToScroll: 1,
-        centerMode: false, // Enable center mode
+        slidesToScroll: 1,
+        centerMode: true, // Enable center mode
         // centerPadding: '100px',
         autoplay:false,
         variableWidth: true,
@@ -16,14 +16,14 @@ $(document).ready(function(){
             {
                 breakpoint: 768,
                 settings: {
-                    // centerMode: true, // Disable center mode for larger screens
+                    centerMode: true, // Disable center mode for larger screens
                     centerPadding: '60px',
                     autoplay:false,
                     variableWidth: true,
                     slidesToShow: 1, // Show 3 slides for larger screens
-                    // slidesToScroll: 1,
+                    slidesToScroll: 1,
                     swipeToSlide: true,
-                    // cssEase: 'ease-in-out',
+                    cssEase: 'ease-in-out',
                     easing: 'linear',
                     swipe: true,
                 }
